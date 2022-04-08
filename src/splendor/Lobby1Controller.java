@@ -77,7 +77,7 @@ public class Lobby1Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        File file = new File("E:\\adam\\.Programování\\Splendor\\src\\Pics\\backgroundvideo.mp4"); //http://tutorials.jenkov.com/javafx/media.html
+        File file = new File("src\\Pics\\backgroundvideo.mp4"); //http://tutorials.jenkov.com/javafx/media.html
         Media media = new Media(file.toURI().toString());
         MediaPlayer player = new MediaPlayer(media);
         pozadiVideo.setMediaPlayer(player);

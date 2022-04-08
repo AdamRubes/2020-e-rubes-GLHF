@@ -64,6 +64,15 @@ public class HraController implements Initializable {
     private ImageView poleKarty3;
 
     @FXML
+    private ImageView poleKarty7;
+
+    @FXML
+    private ImageView poleKarty8;
+
+    @FXML
+    private ImageView poleKarty9;
+
+    @FXML
     private Button tlacitkoDocasne;
 
     @FXML
@@ -310,8 +319,7 @@ public class HraController implements Initializable {
 
     GeneratorKaret g = new GeneratorKaret();
 
-    
-    void kresli(){
+    void kresli() {
         nactiPuvodniKarty();
         vykresliKartu();
 
@@ -332,14 +340,18 @@ public class HraController implements Initializable {
         karta4 = g.najdiNovouKartu2();
         karta5 = g.najdiNovouKartu2();
         karta6 = g.najdiNovouKartu2();
-
+        
+        karta7 = g.najdiNovouKartu1();
+        karta8 = g.najdiNovouKartu1();
+        karta9 = g.najdiNovouKartu1();
+/*
         System.out.println(karta1.barva);
         System.out.println(karta2.barva);
         System.out.println(karta3.barva);
 
         System.out.println(karta4.barva);
         System.out.println(karta5.barva);
-        System.out.println(karta6.barva);
+        System.out.println(karta6.barva);*/
     }
 
     public void nactiKartu(int i) {
@@ -374,6 +386,21 @@ public class HraController implements Initializable {
                 System.out.println(karta6.barva);
                 poleKarty6.setImage(new Image(karta6.obrazek));
                 break;
+            case (7):
+                karta7 = g.najdiNovouKartu1();
+                System.out.println(karta7.barva);
+                poleKarty7.setImage(new Image(karta7.obrazek));
+                break;
+            case (8):
+                karta8 = g.najdiNovouKartu1();
+                System.out.println(karta8.barva);
+                poleKarty8.setImage(new Image(karta8.obrazek));
+                break;
+            case (9):
+                karta9 = g.najdiNovouKartu1();
+                System.out.println(karta9.barva);
+                poleKarty9.setImage(new Image(karta9.obrazek));
+                break;
         }
     }
 
@@ -390,6 +417,12 @@ public class HraController implements Initializable {
         poleKarty5.setImage(new Image(karta5.obrazek));
 
         poleKarty6.setImage(new Image(karta6.obrazek));
+        
+        poleKarty7.setImage(new Image(karta7.obrazek));
+        
+        poleKarty8.setImage(new Image(karta8.obrazek));
+        
+        poleKarty9.setImage(new Image(karta9.obrazek));
 
     }
 
@@ -417,10 +450,10 @@ public class HraController implements Initializable {
 
     }
 
-    void aktualizaceStavu(){
-        
+    void aktualizaceStavu() {
+
     }
-    
+
     @FXML
     void poleKarty1Klik() {
         System.out.println("pred nakupem");
@@ -474,6 +507,30 @@ public class HraController implements Initializable {
     }
 
     @FXML
+    void poleKarty7Klik(MouseEvent event) {
+        System.out.println("pred nakupem");
+        nakupKarty(karta7);
+        System.out.println("po nakupu");
+        nactiKartu(7);
+    }
+
+    @FXML
+    void poleKarty8Klik(MouseEvent event) {
+        System.out.println("pred nakupem");
+        nakupKarty(karta8);
+        System.out.println("po nakupu");
+        nactiKartu(8);
+    }
+
+    @FXML
+    void poleKarty9Klik(MouseEvent event) {
+        System.out.println("pred nakupem");
+        nakupKarty(karta7);
+        System.out.println("po nakupu");
+        nactiKartu(9);
+    }
+
+    @FXML
     void poleKarty6Klik(MouseEvent event) {
         System.out.println("pred nakupem");
         nakupKarty(karta6);
@@ -491,10 +548,6 @@ public class HraController implements Initializable {
         kresli();
     }
 
-    
-    
-    
-    
     public Karta nakupKarty(Karta karta) {
         File file;
         if (hrac1.jeNaTahu == true) {
@@ -1366,6 +1419,15 @@ public class HraController implements Initializable {
         }
         return null;
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2263,4 +2325,33 @@ public class HraController implements Initializable {
         animaceOupusteniKarty(poleKarty6);
     }
 
+    @FXML
+    void poleKarty7Vstup(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleKarty7Vystup(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleKarty8Vstup(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleKarty8Vystup(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleKarty9Vstup(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleKarty9Vystup(MouseEvent event) {
+
+    }
 }

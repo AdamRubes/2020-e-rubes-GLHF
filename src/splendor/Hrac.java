@@ -9,7 +9,7 @@ package splendor;
  *
  * @author Adam
  */
-public class Hrac {//GAEEEEEEEEE
+public class Hrac {
     int id;
     boolean jeNaTahu;
     int pocetZelKamenu = 500;

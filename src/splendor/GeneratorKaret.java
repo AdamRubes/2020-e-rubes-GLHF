@@ -29,11 +29,13 @@ public class GeneratorKaret implements Serializable {
     Integer[] indexZabranychKaret1;
     int i = 0;
     int j = 0;
+    int k = 0;
 
     //Karta(String barva, int body, int cenaB, int cenaM, int cenaC, int cenaH, int cenaZ, int kategorie, String obrazek)
     public void generuj() {
         indexZabranychKaret3 = new Integer[20];
         indexZabranychKaret2 = new Integer[30];
+        indexZabranychKaret2 = new Integer[40];
         
         
         listKaret3.add(new Karta("zelena", 5, 0, 7, 0, 0, 3, 3, "Pics/Karty/zel3-2.jpg"));
@@ -96,8 +98,58 @@ public class GeneratorKaret implements Serializable {
         listKaret2.add(new Karta("modra", 2, 2, 0, 1, 4, 0, 2, "Pics/Karty/mod2-4.jpg"));
         listKaret2.add(new Karta("modra", 1, 0, 2, 3, 0, 2, 2, "Pics/Karty/mod2-5.jpg"));
         listKaret2.add(new Karta("modra", 3, 0, 6, 0, 0, 0, 2, "Pics/Karty/mod2-6.jpg"));
-
-        //listKaret2.add(new Karta("cervena", 0, 0, 0, 0, 0, 0, 0, "Pics/Karty/hne2-1.jpg"));
+        //                               b, b, m, c, h, z, k
+        listKaret1.add(new Karta("bila", 0, 3, 1, 0, 1, 0, 1, "Pics/Karty/bil1-1.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 1, 1, 1, 2, 1, "Pics/Karty/bil1-2.jpg"));
+        listKaret1.add(new Karta("bila", 1, 0, 0, 0, 0, 4, 1, "Pics/Karty/bil1-3.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 2, 0, 2, 0, 1, "Pics/Karty/bil1-4.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 0, 2, 1, 0, 1, "Pics/Karty/bil1-5.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 1, 1, 1, 1, 1, "Pics/Karty/bil1-6.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 3, 0, 0, 0, 1, "Pics/Karty/bil1-7.jpg"));
+        listKaret1.add(new Karta("bila", 0, 0, 2, 0, 1, 2, 1, "Pics/Karty/bil1-8.jpg"));
+        //                                  b, b, m, c, h, z, k
+        listKaret1.add(new Karta("cervena", 1, 4, 0, 0, 0, 0, 1, "Pics/Karty/cer1-1.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 1, 1, 0, 1, 1, 1, "Pics/Karty/cer1-2.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 0, 2, 0, 0, 1, 1, "Pics/Karty/cer1-3.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 1, 0, 1, 3, 0, 1, "Pics/Karty/cer1-4.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 2, 1, 0, 1, 1, 1, "Pics/Karty/cer1-5.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 2, 0, 0, 2, 1, 1, "Pics/Karty/cer1-6.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 2, 0, 2, 0, 0, 1, "Pics/Karty/cer1-7.jpg"));
+        listKaret1.add(new Karta("cervena", 0, 3, 0, 0, 0, 0, 1, "Pics/Karty/cer1-8.jpg"));
+//                                        b, b, m, c, h, z, k
+        listKaret1.add(new Karta("hneda", 0, 2, 2, 1, 0, 0, 1, "Pics/Karty/hne1-1.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 0, 0, 0, 0, 3, 1, "Pics/Karty/hne1-2.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 1, 2, 1, 0, 1, 1, "Pics/Karty/hne1-3.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 0, 0, 3, 1, 1, 1, "Pics/Karty/hne1-4.jpg"));
+        listKaret1.add(new Karta("hneda", 1, 0, 4, 0, 0, 0, 1, "Pics/Karty/hne1-5.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 2, 0, 0, 0, 2, 1, "Pics/Karty/hne1-6.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 0, 0, 1, 0, 2, 1, "Pics/Karty/hne1-7.jpg"));
+        listKaret1.add(new Karta("hneda", 0, 1, 1, 1, 0, 1, 1, "Pics/Karty/hne1-8.jpg"));
+        //                                b, b, m, c, h, z, k
+        listKaret1.add(new Karta("modra", 0, 0, 0, 0, 2, 2, 1, "Pics/Karty/mod1-1.jpg"));
+        listKaret1.add(new Karta("modra", 0, 0, 1, 1, 0, 3, 1, "Pics/Karty/mod1-2.jpg"));
+        listKaret1.add(new Karta("modra", 0, 0, 0, 0, 3, 0, 1, "Pics/Karty/mod1-3.jpg"));
+        listKaret1.add(new Karta("modra", 0, 1, 0, 0, 2, 0, 1, "Pics/Karty/mod1-4.jpg"));
+        listKaret1.add(new Karta("modra", 0, 1, 0, 2, 1, 1, 1, "Pics/Karty/mod1-5.jpg"));
+        listKaret1.add(new Karta("modra", 0, 1, 0, 2, 0, 2, 1, "Pics/Karty/mod1-6.jpg"));
+        listKaret1.add(new Karta("modra", 1, 0, 0, 4, 0, 0, 1, "Pics/Karty/mod1-7.jpg"));
+        listKaret1.add(new Karta("modra", 0, 1, 0, 1, 1, 1, 1, "Pics/Karty/mod1-8.jpg"));
+        //                                 b, b, m, c, h, z, k
+        listKaret1.add(new Karta("zelena", 0, 1, 1, 1, 2, 0, 1, "Pics/Karty/zel1-1.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 1, 3, 0, 0, 1, 1, "Pics/Karty/zel1-2.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 1, 1, 1, 1, 0, 1, "Pics/Karty/zel1-3.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 0, 0, 3, 0, 0, 1, "Pics/Karty/zel1-4.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 0, 1, 2, 2, 0, 1, "Pics/Karty/zel1-5.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 0, 2, 2, 0, 0, 1, "Pics/Karty/zel1-6.jpg"));
+        listKaret1.add(new Karta("zelena", 0, 2, 1, 0, 0, 0, 1, "Pics/Karty/zel1-7.jpg"));
+        listKaret1.add(new Karta("zelena", 1, 0, 0, 0, 4, 0, 1, "Pics/Karty/zel1-8.jpg"));
+        
+        
+        
+        
+        
+        
+        //listKaret1.add(new Karta("cervena", 0, 0, 0, 0, 0, 0, 0, "Pics/Karty/hne1-1.jpg"));
     }
 
     public Karta najdiNovouKartu3() {
@@ -119,15 +171,16 @@ public class GeneratorKaret implements Serializable {
 
         indexZabranychKaret3[i] = a;
         i++;
-        for (int i = 0; i <= 19; i++) {
+       /* for (int i = 0; i <= 19; i++) {
             System.out.println(i + " " + indexZabranychKaret3[i]);
-        }
+        }*/
         return listKaret3.get(a);
 
     }
     
         public Karta najdiNovouKartu2() {
         if (i == 29) {
+            System.out.println("SUS");
             return new Karta("null", 999, 0, 0, 0, 0, 0, 0, "Pics/Karty/prazdnaKarta.jpg");
         }
         Random rand = new Random();
@@ -145,10 +198,39 @@ public class GeneratorKaret implements Serializable {
 
         indexZabranychKaret2[j] = a;
         j++;
-        for (int i = 0; i <= 19; i++) {
+        /*for (int i = 0; i <= 19; i++) {
             System.out.println(i + " " + indexZabranychKaret3[i]);
-        }
+        }*/
         return listKaret2.get(a);
+
+    }
+        
+        public Karta najdiNovouKartu1() {
+        if (i == 39) {
+            System.out.println("SUS");
+                    
+                    
+            return new Karta("null", 999, 0, 0, 0, 0, 0, 0, "Pics/Karty/prazdnaKarta.jpg");
+        }
+        Random rand = new Random();
+        int randomNum = rand.nextInt(40);
+        int a = randomNum;
+        //System.out.println(a);
+
+       /* List<Integer> intList = new ArrayList<>(Arrays.asList(indexZabranychKaret1));//https://stackabuse.com/java-check-if-array-contains-value-or-element/
+
+        while (intList.contains(a)) {
+            randomNum = rand.nextInt(40);
+            a = randomNum;
+            System.out.println("duplicitní karta" + " nové " + a);
+        }
+
+        indexZabranychKaret1[k] = a;
+        k++;
+        /*for (int i = 0; i <= 19; i++) {
+            System.out.println(i + " " + indexZabranychKaret3[i]);
+        }*/
+        return listKaret1.get(a);
 
     }
 
