@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneLobby1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.Lobby1Controller">
+   <children>
+      <MediaView fx:id="pozadiVideo" fitHeight="1080.0" fitWidth="1920.0" mouseTransparent="true" />
+      <GridPane fx:id="GridPane" prefHeight="1080.0" prefWidth="1920.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="604.0" minWidth="10.0" prefWidth="600.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1320.0" minWidth="10.0" prefWidth="720.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="710.0" minWidth="0.0" prefWidth="600.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="LogoHry" fitHeight="360.0" fitWidth="722.0" pickOnBounds="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../Pics/Logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="tlacitkoHraDvouHRacu" mnemonicParsing="false" onAction="#stisknutoHraDvouHracu" prefHeight="66.0" prefWidth="166.0" text="Hra dvou hráčů" />
+                  <HBox prefHeight="360.0" prefWidth="54.0" />
+                  <Button fx:id="tlacitkoHraTriHracu" mnemonicParsing="false" onAction="#stisknutoHraTriHracu" prefHeight="67.0" prefWidth="152.0" text="Hra tří Hráčů" />
+                  <HBox prefHeight="360.0" prefWidth="56.0" />
+                  <Button fx:id="tlacitkoHraPoSiti" mnemonicParsing="false" onAction="#stisknutoHraPoSiti" prefHeight="74.0" prefWidth="166.0" text="Hra po síti" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
