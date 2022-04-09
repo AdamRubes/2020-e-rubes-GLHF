@@ -43,6 +43,21 @@ public class HraController implements Initializable {
     Hrac hrac2;
 
     @FXML
+    private ImageView h2Slechtic;
+
+    @FXML
+    private ImageView h1Slechtic;
+
+    @FXML
+    private ImageView poleSlechtic1;
+
+    @FXML
+    private ImageView poleSlechtic2;
+
+    @FXML
+    private ImageView poleSlechtic3;
+
+    @FXML
     private AnchorPane AnchorPaneHra;
 
     @FXML
@@ -340,11 +355,11 @@ public class HraController implements Initializable {
         karta4 = g.najdiNovouKartu2();
         karta5 = g.najdiNovouKartu2();
         karta6 = g.najdiNovouKartu2();
-        
+
         karta7 = g.najdiNovouKartu1();
         karta8 = g.najdiNovouKartu1();
         karta9 = g.najdiNovouKartu1();
-/*
+        /*
         System.out.println(karta1.barva);
         System.out.println(karta2.barva);
         System.out.println(karta3.barva);
@@ -417,11 +432,11 @@ public class HraController implements Initializable {
         poleKarty5.setImage(new Image(karta5.obrazek));
 
         poleKarty6.setImage(new Image(karta6.obrazek));
-        
+
         poleKarty7.setImage(new Image(karta7.obrazek));
-        
+
         poleKarty8.setImage(new Image(karta8.obrazek));
-        
+
         poleKarty9.setImage(new Image(karta9.obrazek));
 
     }
@@ -537,6 +552,23 @@ public class HraController implements Initializable {
         System.out.println("po nakupu");
         nactiKartu(6);
         System.out.println("nacteno");
+
+    }
+
+    @FXML
+    void poleSlechtic1Klik(MouseEvent event) {
+        if(hrac1.jeNaTahu){
+            
+        }
+    }
+
+    @FXML
+    void poleSlechtic2Klik(MouseEvent event) {
+
+    }
+
+    @FXML
+    void poleSlechtic3Klik(MouseEvent event) {
 
     }
 
@@ -1420,49 +1452,6 @@ public class HraController implements Initializable {
         return null;
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     ////// ANIMACE -->
     @FXML
     void poleKarty1Vstup(MouseEvent event) {
@@ -2327,31 +2316,92 @@ public class HraController implements Initializable {
 
     @FXML
     void poleKarty7Vstup(MouseEvent event) {
-
+        animaceDotekuKarty(poleKarty7);
     }
 
     @FXML
     void poleKarty7Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty7);
 
     }
 
     @FXML
     void poleKarty8Vstup(MouseEvent event) {
-
+        animaceDotekuKarty(poleKarty8);
     }
 
     @FXML
     void poleKarty8Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty8);
 
     }
 
     @FXML
     void poleKarty9Vstup(MouseEvent event) {
-
+        animaceDotekuKarty(poleKarty9);
     }
 
     @FXML
     void poleKarty9Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty9);
 
     }
+
+    @FXML
+    void slechtic1Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleSlechtic1);
+    }
+
+    @FXML
+    void slechtic1Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleSlechtic1);
+
+    }
+
+    @FXML
+    void slechtic2Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleSlechtic2);
+    }
+
+    @FXML
+    void slechtic2Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleSlechtic2);
+
+    }
+
+    @FXML
+    void slechtic3Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleSlechtic3);
+    }
+
+    @FXML
+    void slechtic3Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleSlechtic3);
+
+    }
+
+    @FXML
+    void h1SlechticVstup(MouseEvent event) {
+        animaceDotekuKarty(h1Slechtic);
+
+    }
+
+    @FXML
+    void h1SlechticVystup(MouseEvent event) {
+        animaceOupusteniKarty(h1Slechtic);
+
+    }
+
+    @FXML
+    void h2SlechticVstup(MouseEvent event) {
+        animaceDotekuKarty(h2Slechtic);
+
+    }
+
+    @FXML
+    void h2SlechticVystup(MouseEvent event) {
+        animaceOupusteniKarty(h2Slechtic);
+
+    }
+
 }

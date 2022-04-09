@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="AnchorPaneHra" prefHeight="1080.0" prefWidth="1942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.HraController">
    <children>
-      <GridPane layoutY="-23.0" prefHeight="1080.0" prefWidth="1920.0">
+      <GridPane layoutY="-23.0" prefHeight="1102.0" prefWidth="1920.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="668.0" minWidth="614.0" prefWidth="614.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="677.0" />
@@ -62,6 +62,7 @@
                   <ImageView fx:id="h1c15" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="516.0" mouseTransparent="true" onMouseEntered="#h1c15Vstup" onMouseExited="#h1c15Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h1c16Vstup" onMouseExited="#h1c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h1c17Vstup" onMouseExited="#h1c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
+                  <ImageView fx:id="h1Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="400.0" layoutY="611.0" onMouseEntered="#h1SlechticVstup" onMouseExited="#h1SlechticVystup" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -119,10 +120,16 @@
                   <ImageView fx:id="h2c15" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="205.0" layoutY="516.0" mouseTransparent="true" onMouseEntered="#h2c15Vstup" onMouseExited="#h2c15Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h2c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="205.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h2c16Vstup" onMouseExited="#h2c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h2c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="205.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h2c17Vstup" onMouseExited="#h2c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
+                  <ImageView fx:id="h2Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="434.0" layoutY="620.0" onMouseEntered="#h2SlechticVstup" onMouseExited="#h2SlechticVystup" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fx:id="poleSlechtic1" fitHeight="102.0" fitWidth="122.0" layoutX="45.0" onMouseEntered="#slechtic1Vstup" onMouseExited="#slechtic1Vystup" onMousePressed="#poleSlechtic1Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleSlechtic2" fitHeight="102.0" fitWidth="122.0" layoutX="268.0" onMouseEntered="#slechtic2Vstup" onMouseExited="#slechtic2Vystup" onMousePressed="#poleSlechtic2Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleSlechtic3" fitHeight="102.0" fitWidth="122.0" layoutX="491.0" onMouseEntered="#slechtic3Vstup" onMouseExited="#slechtic3Vystup" onMousePressed="#poleSlechtic3Klik" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
          </children>
       </GridPane>
