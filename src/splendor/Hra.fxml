@@ -16,8 +16,8 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="445.0" minHeight="0.0" prefHeight="18.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="911.0" minHeight="10.0" prefHeight="853.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="429.0" minHeight="10.0" prefHeight="209.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="911.0" minHeight="10.0" prefHeight="819.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="429.0" minHeight="10.0" prefHeight="262.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="637.0" GridPane.rowIndex="1">
@@ -62,19 +62,19 @@
                   <ImageView fx:id="h1c15" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="516.0" mouseTransparent="true" onMouseEntered="#h1c15Vstup" onMouseExited="#h1c15Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h1c16Vstup" onMouseExited="#h1c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h1c17Vstup" onMouseExited="#h1c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
-                  <ImageView fx:id="h1Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="400.0" layoutY="611.0" onMouseEntered="#h1SlechticVstup" onMouseExited="#h1SlechticVystup" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="h1Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="415.0" layoutY="611.0" onMouseEntered="#h1SlechticVstup" onMouseExited="#h1SlechticVystup" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ImageView fx:id="poleKarty1" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="14.0" onMouseEntered="#poleKarty1Vstup" onMouseExited="#poleKarty1Vystup" onMousePressed="#poleKarty1Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty2" fitHeight="260.0" fitWidth="205.0" layoutX="220.0" layoutY="14.0" nodeOrientation="INHERIT" onMouseEntered="#poleKarty2Vstup" onMouseExited="#poleKarty2Vystup" onMousePressed="#poleKarty2Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKarty2" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="14.0" nodeOrientation="INHERIT" onMouseEntered="#poleKarty2Vstup" onMouseExited="#poleKarty2Vystup" onMousePressed="#poleKarty2Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKarty3" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="14.0" onMouseEntered="#poleKarty3Vstup" onMouseExited="#poleKarty3Vystup" onMousePressed="#poleKarty3Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKarty4" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="285.0" onMouseEntered="#poleKarty4Vstup" onMouseExited="#poleKarty4Vystup" onMousePressed="#poleKarty4Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty5" fitHeight="260.0" fitWidth="205.0" layoutX="220.0" layoutY="285.0" onMouseEntered="#poleKarty5Vstup" onMouseExited="#poleKarty5Vystup" onMousePressed="#poleKarty5Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKarty5" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="285.0" onMouseEntered="#poleKarty5Vstup" onMouseExited="#poleKarty5Vystup" onMousePressed="#poleKarty5Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKarty6" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="285.0" onMouseEntered="#poleKarty6Vstup" onMouseExited="#poleKarty6Vystup" onMousePressed="#poleKarty6Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKarty7" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="555.0" onMouseEntered="#poleKarty7Vstup" onMouseExited="#poleKarty7Vystup" onMousePressed="#poleKarty7Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty8" fitHeight="260.0" fitWidth="205.0" layoutX="220.0" layoutY="555.0" onMouseEntered="#poleKarty8Vstup" onMouseExited="#poleKarty8Vystup" onMousePressed="#poleKarty8Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKarty8" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="555.0" onMouseEntered="#poleKarty8Vstup" onMouseExited="#poleKarty8Vystup" onMousePressed="#poleKarty8Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKarty9" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="555.0" onMouseEntered="#poleKarty9Vstup" onMouseExited="#poleKarty9Vystup" onMousePressed="#poleKarty9Klik" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
@@ -126,9 +126,15 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <ImageView fx:id="poleSlechtic1" fitHeight="102.0" fitWidth="122.0" layoutX="45.0" onMouseEntered="#slechtic1Vstup" onMouseExited="#slechtic1Vystup" onMousePressed="#poleSlechtic1Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleSlechtic2" fitHeight="102.0" fitWidth="122.0" layoutX="268.0" onMouseEntered="#slechtic2Vstup" onMouseExited="#slechtic2Vystup" onMousePressed="#poleSlechtic2Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleSlechtic3" fitHeight="102.0" fitWidth="122.0" layoutX="491.0" onMouseEntered="#slechtic3Vstup" onMouseExited="#slechtic3Vystup" onMousePressed="#poleSlechtic3Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleSlechtic1" fitHeight="102.0" fitWidth="122.0" onMouseEntered="#slechtic1Vstup" onMouseExited="#slechtic1Vystup" onMousePressed="#poleSlechtic1Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleSlechtic2" fitHeight="102.0" fitWidth="122.0" layoutX="38.0" onMouseEntered="#slechtic2Vstup" onMouseExited="#slechtic2Vystup" onMousePressed="#poleSlechtic2Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleSlechtic3" fitHeight="102.0" fitWidth="122.0" layoutX="83.0" onMouseEntered="#slechtic3Vstup" onMouseExited="#slechtic3Vystup" onMousePressed="#poleSlechtic3Klik" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenZolik" fitHeight="100.0" fitWidth="100.0" layoutX="544.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenBil" fitHeight="100.0" fitWidth="100.0" layoutX="544.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenMod" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenCer" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenZel" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenHne" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
          </children>

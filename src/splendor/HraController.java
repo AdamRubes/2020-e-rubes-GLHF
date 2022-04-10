@@ -38,6 +38,10 @@ public class HraController implements Initializable {
     Karta karta7;
     Karta karta8;
     Karta karta9;
+    
+    Slechtic slechtic1;
+    Slechtic slechtic2;
+    Slechtic slechtic3;
 
     Hrac hrac1;
     Hrac hrac2;
@@ -331,13 +335,45 @@ public class HraController implements Initializable {
 
     @FXML
     private ImageView h2c17;
+    
+    
+    @FXML
+    private ImageView poleKamenZolik;
+
+    @FXML
+    private ImageView poleKamenBil;
+
+    @FXML
+    private ImageView poleKamenMod;
+
+    @FXML
+    private ImageView poleKamenCer;
+
+    @FXML
+    private ImageView poleKamenZel;
+
+    @FXML
+    private ImageView poleKamenHne;
 
     GeneratorKaret g = new GeneratorKaret();
+    GeneratorSlechticu f = new GeneratorSlechticu();
 
     void kresli() {
         nactiPuvodniKarty();
+        nactiPuvodniSlechtice();
         vykresliKartu();
+        vykresliSlechtice();
+        vykresliKameny();
 
+    }
+    
+    void vykresliKameny(){
+        poleKamenBil.setImage(new Image("Pics/Kameny/bil.png"));
+        poleKamenMod.setImage(new Image("Pics/Kameny/mod.png"));
+        poleKamenCer.setImage(new Image("Pics/Kameny/cer.png"));
+        poleKamenZolik.setImage(new Image("Pics/Kameny/zla.png"));
+        poleKamenZel.setImage(new Image("Pics/Kameny/zeleny.png"));
+        poleKamenHne.setImage(new Image("Pics/Kameny/hne.png"));
     }
 
     //metoda pro načítání FXML
@@ -368,6 +404,20 @@ public class HraController implements Initializable {
         System.out.println(karta5.barva);
         System.out.println(karta6.barva);*/
     }
+    
+    public void nactiPuvodniSlechtice(){
+        slechtic1 = f.najdiSlechtice();
+        slechtic2 = f.najdiSlechtice();
+        slechtic3 = f.najdiSlechtice();         
+    }
+    
+    public void vykresliSlechtice(){
+        poleSlechtic1.setImage(new Image(slechtic1.obrazek));
+        poleSlechtic2.setImage(new Image(slechtic2.obrazek));
+        poleSlechtic3.setImage(new Image(slechtic3.obrazek));
+    }
+    
+    
 
     public void nactiKartu(int i) {
         switch (i) {
@@ -577,6 +627,8 @@ public class HraController implements Initializable {
         hrac1 = new Hrac(1, true);
         hrac2 = new Hrac(1, false);
         g.generuj();
+        f.generujSlechtice();
+        
         kresli();
     }
 
