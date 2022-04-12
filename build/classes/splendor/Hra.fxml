@@ -127,7 +127,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Text layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hráč2 ">
+                  <Text fx:id="textPoleHrac2" layoutX="224.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hráč 2 ">
                      <font>
                         <Font size="64.0" />
                      </font>
@@ -147,7 +147,7 @@
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <Text layoutX="388.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hráč 1" textAlignment="RIGHT" wrappingWidth="225.13671875">
+                  <Text fx:id="textPoleHrac1" layoutX="194.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hráč 1" textAlignment="CENTER" wrappingWidth="225.13671875">
                      <font>
                         <Font size="64.0" />
                      </font>

@@ -20,6 +20,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 /**
@@ -356,6 +358,11 @@ public class HraController implements Initializable {
     @FXML
     private ImageView poleKamenHne;
 
+    @FXML
+    private Text textPoleHrac2;
+    @FXML
+    private Text textPoleHrac1;
+
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
 
@@ -531,7 +538,7 @@ public class HraController implements Initializable {
             System.out.println("muzes vzit slechtice");
         }
 
-        System.out.println(karta1.barva + karta2.barva + karta3.barva);
+        //System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
     }
 
@@ -547,7 +554,7 @@ public class HraController implements Initializable {
             System.out.println("muzes vzit slechtice");
         }
 
-        System.out.println(karta1.barva + karta2.barva + karta3.barva);
+        //System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
     }
 
@@ -563,14 +570,13 @@ public class HraController implements Initializable {
             System.out.println("muzes vzit slechtice");
         }
 
-        System.out.println(karta1.barva + karta2.barva + karta3.barva);
+       // System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
     }
 
     @FXML
     void poleKarty4Klik(MouseEvent event) {
 
-        
         if (muzeSlechtice == false) {
             System.out.println("pred nakupem");
             nakupKarty(karta4);
@@ -663,15 +669,18 @@ public class HraController implements Initializable {
                 hrac1.pocetBodu = hrac1.pocetBodu + slechtic1.pocetBodu;
                 h1Slechtic.setImage(new Image(slechtic1.obrazek));
                 poleSlechtic1.setImage(null);
+                System.out.println("hráč2 je na tahu");
+                textPoleHrac1.setFill(Color.RED);
+                textPoleHrac2.setFill(Color.GREEN);
                 hrac1.jeNaTahu = false;
                 hrac2.jeNaTahu = true;
-
+                muzeSlechtice = false;
             } else {
                 System.out.println("nemás dost karet");
             }
 
         } else if (hrac2.jeNaTahu == true) {
- System.out.println("hrac 2");
+            System.out.println("hrac 2");
             if (hrac2.pocetBilKaret >= slechtic1.cenaB
                     && hrac2.pocetCerKaret >= slechtic1.cenaC
                     && hrac2.pocetHneKaret >= slechtic1.cenaH
@@ -681,8 +690,12 @@ public class HraController implements Initializable {
                 hrac2.pocetBodu = hrac2.pocetBodu + slechtic1.pocetBodu;
                 h2Slechtic.setImage(new Image(slechtic1.obrazek));
                 poleSlechtic1.setImage(null);
+                System.out.println("hráč1 je na tahu");
+                textPoleHrac1.setFill(Color.GREEN);
+                textPoleHrac2.setFill(Color.RED);
                 hrac1.jeNaTahu = true;
                 hrac2.jeNaTahu = false;
+                muzeSlechtice = false;
             } else {
                 System.out.println("nemás dost karet");
             }
@@ -704,14 +717,18 @@ public class HraController implements Initializable {
                 hrac1.pocetBodu = hrac1.pocetBodu + slechtic2.pocetBodu;
                 h1Slechtic.setImage(new Image(slechtic2.obrazek));
                 poleSlechtic2.setImage(null);
+                System.out.println("hráč2 je na tahu");
                 hrac1.jeNaTahu = false;
                 hrac2.jeNaTahu = true;
+                textPoleHrac1.setFill(Color.GREEN);
+                textPoleHrac2.setFill(Color.RED);
+                muzeSlechtice = false;
             } else {
                 System.out.println("nemás dost karet");
             }
 
         } else if (hrac2.jeNaTahu == true) {
- System.out.println("hrac 2");
+            System.out.println("hrac 2");
             if (hrac2.pocetBilKaret >= slechtic2.cenaB
                     && hrac2.pocetCerKaret >= slechtic2.cenaC
                     && hrac2.pocetHneKaret >= slechtic2.cenaH
@@ -721,8 +738,12 @@ public class HraController implements Initializable {
                 hrac2.pocetBodu = hrac2.pocetBodu + slechtic2.pocetBodu;
                 h2Slechtic.setImage(new Image(slechtic2.obrazek));
                 poleSlechtic2.setImage(null);
+                System.out.println("hráč1 je na tahu");
                 hrac1.jeNaTahu = true;
                 hrac2.jeNaTahu = false;
+                textPoleHrac1.setFill(Color.RED);
+                textPoleHrac2.setFill(Color.GREEN);
+                muzeSlechtice = false;
             } else {
                 System.out.println("nemás dost karet");
             }
@@ -743,15 +764,18 @@ public class HraController implements Initializable {
                 hrac1.pocetBodu = hrac1.pocetBodu + slechtic3.pocetBodu;
                 h1Slechtic.setImage(new Image(slechtic3.obrazek));
                 poleSlechtic3.setImage(null);
+                System.out.println("hráč2 je na tahu");
                 hrac1.jeNaTahu = false;
                 hrac2.jeNaTahu = true;
-
+                textPoleHrac1.setFill(Color.GREEN);
+                textPoleHrac2.setFill(Color.RED);
+                muzeSlechtice = false;
             } else {
                 System.out.println("nemás dost karet");
             }
 
         } else if (hrac2.jeNaTahu == true) {
- System.out.println("hrac 2");
+            System.out.println("hrac 2");
             if (hrac2.pocetBilKaret >= slechtic3.cenaB
                     && hrac2.pocetCerKaret >= slechtic3.cenaC
                     && hrac2.pocetHneKaret >= slechtic3.cenaH
@@ -761,8 +785,12 @@ public class HraController implements Initializable {
                 hrac2.pocetBodu = hrac2.pocetBodu + slechtic3.pocetBodu;
                 h2Slechtic.setImage(new Image(slechtic3.obrazek));
                 poleSlechtic3.setImage(null);
+                System.out.println("hráč1 je na tahu");
                 hrac1.jeNaTahu = true;
                 hrac2.jeNaTahu = false;
+                textPoleHrac1.setFill(Color.RED);
+                textPoleHrac2.setFill(Color.GREEN);
+                
             } else {
                 System.out.println("nemás dost karet");
             }
@@ -773,6 +801,8 @@ public class HraController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         hrac1 = new Hrac(1, true);
         hrac2 = new Hrac(1, false);
+        textPoleHrac1.setFill(Color.GREEN);
+        textPoleHrac2.setFill(Color.RED);
         g.generuj();
         f.generujSlechtice();
         kresli();
@@ -1224,14 +1254,41 @@ public class HraController implements Initializable {
                         && hrac1.pocetCerKaret >= slechtic2.cenaC
                         && hrac1.pocetHneKaret >= slechtic2.cenaH
                         && hrac1.pocetModKaret >= slechtic2.cenaM
-                        && hrac1.pocetZelKaret >= slechtic2.cenaZ)) {
+                        && hrac1.pocetZelKaret >= slechtic2.cenaZ)
+                        && (slechtic1.zabranej == false)) {
 
                     muzeSlechtice = true;
+                        if(hrac1.pocetBilKaret >= slechtic1.cenaB
+                        && hrac1.pocetCerKaret >= slechtic1.cenaC
+                        && hrac1.pocetHneKaret >= slechtic1.cenaH
+                        && hrac1.pocetModKaret >= slechtic1.cenaM
+                        && hrac1.pocetZelKaret >= slechtic1.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 1");
+                        }
+                        if(hrac1.pocetBilKaret >= slechtic3.cenaB
+                        && hrac1.pocetCerKaret >= slechtic3.cenaC
+                        && hrac1.pocetHneKaret >= slechtic3.cenaH
+                        && hrac1.pocetModKaret >= slechtic3.cenaM
+                        && hrac1.pocetZelKaret >= slechtic3.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 3");
+                        }
+                        
+                        if(hrac1.pocetBilKaret >= slechtic2.cenaB
+                        && hrac1.pocetCerKaret >= slechtic2.cenaC
+                        && hrac1.pocetHneKaret >= slechtic2.cenaH
+                        && hrac1.pocetModKaret >= slechtic2.cenaM
+                        && hrac1.pocetZelKaret >= slechtic2.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 2");
+                        }
+                        
 
-                    System.out.println("můžeš vzít šlechtice");
+                    
                 } else {
+                    System.out.println("hráč2 je na tahu");
                     hrac1.jeNaTahu = false;
                     hrac2.jeNaTahu = true;
+                    textPoleHrac1.setFill(Color.RED);
+                    textPoleHrac2.setFill(Color.GREEN);
                 }
 
             } else {
@@ -1252,8 +1309,7 @@ public class HraController implements Initializable {
                 hrac2.pocetModKamenu = hrac2.pocetModKamenu - karta.cenaM;
                 hrac2.pocetZelKamenu = hrac2.pocetZelKamenu - karta.cenaZ;
                 System.out.println("má dost kamenů");
-                hrac1.jeNaTahu = true;
-                hrac2.jeNaTahu = false;
+
                 switch (karta.barva) {
                     case "bila":
                         System.out.println("kupujes bílou");
@@ -1682,12 +1738,40 @@ public class HraController implements Initializable {
                         && hrac2.pocetCerKaret >= slechtic2.cenaC
                         && hrac2.pocetHneKaret >= slechtic2.cenaH
                         && hrac2.pocetModKaret >= slechtic2.cenaM
-                        && hrac2.pocetZelKaret >= slechtic2.cenaZ)) {
-                    muzeSlechtice = true;
-                    System.out.println("můžeš vzít šlechtice");
+                        && hrac2.pocetZelKaret >= slechtic2.cenaZ)
+                        && (slechtic1.zabranej == false)) {
+                        muzeSlechtice = true;
+                    
+                    if(hrac2.pocetBilKaret >= slechtic1.cenaB
+                        && hrac2.pocetCerKaret >= slechtic1.cenaC
+                        && hrac2.pocetHneKaret >= slechtic1.cenaH
+                        && hrac2.pocetModKaret >= slechtic1.cenaM
+                        && hrac2.pocetZelKaret >= slechtic1.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 1");
+                        }
+                        if(hrac2.pocetBilKaret >= slechtic3.cenaB
+                        && hrac2.pocetCerKaret >= slechtic3.cenaC
+                        && hrac2.pocetHneKaret >= slechtic3.cenaH
+                        && hrac2.pocetModKaret >= slechtic3.cenaM
+                        && hrac2.pocetZelKaret >= slechtic3.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 3");
+                        }
+                        
+                        if(hrac2.pocetBilKaret >= slechtic2.cenaB
+                        && hrac2.pocetCerKaret >= slechtic2.cenaC
+                        && hrac2.pocetHneKaret >= slechtic2.cenaH
+                        && hrac2.pocetModKaret >= slechtic2.cenaM
+                        && hrac2.pocetZelKaret >= slechtic2.cenaZ){
+                            System.out.println("můžeš vzít šlechtice 2");
+                        }
+                    
+                    
                 } else {
+                    System.out.println("hráč1 je na tahu");
                     hrac1.jeNaTahu = true;
                     hrac2.jeNaTahu = false;
+                    textPoleHrac1.setFill(Color.GREEN);
+                    textPoleHrac2.setFill(Color.RED);
                 }
 
             }

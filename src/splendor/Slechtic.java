@@ -17,6 +17,7 @@ public class Slechtic {
     int cenaH;
     int pocetBodu = 3;
     String obrazek;
+    boolean zabranej = false;
 
     public Slechtic(int cenaB, int cenaM, int cenaC, int cenaZ, int cenaH, String obrazek) {
         this.cenaB = cenaB;
