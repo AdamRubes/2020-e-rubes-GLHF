@@ -38,13 +38,15 @@ public class HraController implements Initializable {
     Karta karta7;
     Karta karta8;
     Karta karta9;
-    
+
     Slechtic slechtic1;
     Slechtic slechtic2;
     Slechtic slechtic3;
 
     Hrac hrac1;
     Hrac hrac2;
+
+    boolean muzeSlechtice = false;
 
     @FXML
     private ImageView h2Slechtic;
@@ -335,8 +337,7 @@ public class HraController implements Initializable {
 
     @FXML
     private ImageView h2c17;
-    
-    
+
     @FXML
     private ImageView poleKamenZolik;
 
@@ -366,8 +367,8 @@ public class HraController implements Initializable {
         vykresliKameny();
 
     }
-    
-    void vykresliKameny(){
+
+    void vykresliKameny() {
         poleKamenBil.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer.setImage(new Image("Pics/Kameny/cer.png"));
@@ -404,20 +405,18 @@ public class HraController implements Initializable {
         System.out.println(karta5.barva);
         System.out.println(karta6.barva);*/
     }
-    
-    public void nactiPuvodniSlechtice(){
+
+    public void nactiPuvodniSlechtice() {
         slechtic1 = f.najdiSlechtice();
         slechtic2 = f.najdiSlechtice();
-        slechtic3 = f.najdiSlechtice();         
+        slechtic3 = f.najdiSlechtice();
     }
-    
-    public void vykresliSlechtice(){
+
+    public void vykresliSlechtice() {
         poleSlechtic1.setImage(new Image(slechtic1.obrazek));
         poleSlechtic2.setImage(new Image(slechtic2.obrazek));
         poleSlechtic3.setImage(new Image(slechtic3.obrazek));
     }
-    
-    
 
     public void nactiKartu(int i) {
         switch (i) {
@@ -521,11 +520,16 @@ public class HraController implements Initializable {
 
     @FXML
     void poleKarty1Klik() {
-        System.out.println("pred nakupem");
-        nakupKarty(karta1);
 
-        System.out.println("po nakupu");
-        nactiKartu(1);
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta1);
+
+            System.out.println("po nakupu");
+            nactiKartu(1);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
         System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
@@ -533,10 +537,15 @@ public class HraController implements Initializable {
 
     @FXML
     void poleKarty2Klik() {
-        System.out.println("pred nakupem");
-        nakupKarty(karta2);
-        System.out.println("po nakupu");
-        nactiKartu(2);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta2);
+            System.out.println("po nakupu");
+            nactiKartu(2);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
         System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
@@ -544,10 +553,15 @@ public class HraController implements Initializable {
 
     @FXML
     void poleKarty3Klik() {
-        System.out.println("pred nakupem");
-        nakupKarty(karta3);
-        System.out.println("po nakupu");
-        nactiKartu(3);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta3);
+            System.out.println("po nakupu");
+            nactiKartu(3);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
         System.out.println(karta1.barva + karta2.barva + karta3.barva);
 
@@ -555,71 +569,204 @@ public class HraController implements Initializable {
 
     @FXML
     void poleKarty4Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta4);
-        System.out.println("po nakupu");
-        nactiKartu(4);
+
+        
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta4);
+            System.out.println("po nakupu");
+            nactiKartu(4);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
     }
 
     @FXML
     void poleKarty5Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta5);
-        System.out.println("po nakupu");
-        nactiKartu(5);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta5);
+            System.out.println("po nakupu");
+            nactiKartu(5);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
     }
 
     @FXML
     void poleKarty7Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta7);
-        System.out.println("po nakupu");
-        nactiKartu(7);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta7);
+            System.out.println("po nakupu");
+            nactiKartu(7);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
     }
 
     @FXML
     void poleKarty8Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta8);
-        System.out.println("po nakupu");
-        nactiKartu(8);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta8);
+            System.out.println("po nakupu");
+            nactiKartu(8);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
     }
 
     @FXML
     void poleKarty9Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta7);
-        System.out.println("po nakupu");
-        nactiKartu(9);
+
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta9);
+            System.out.println("po nakupu");
+            nactiKartu(9);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
     }
 
     @FXML
     void poleKarty6Klik(MouseEvent event) {
-        System.out.println("pred nakupem");
-        nakupKarty(karta6);
-        System.out.println("po nakupu");
-        nactiKartu(6);
-        System.out.println("nacteno");
+        if (muzeSlechtice == false) {
+            System.out.println("pred nakupem");
+            nakupKarty(karta6);
+            System.out.println("po nakupu");
+            nactiKartu(6);
+        } else if (muzeSlechtice == true) {
+            System.out.println("muzes vzit slechtice");
+        }
 
     }
 
     @FXML
     void poleSlechtic1Klik(MouseEvent event) {
-        if(hrac1.jeNaTahu){
-            
+        System.out.println(" klik");
+        if (hrac1.jeNaTahu == true) {
+
+            System.out.println("hrac 1");
+            if (hrac1.pocetBilKaret >= slechtic1.cenaB
+                    && hrac1.pocetCerKaret >= slechtic1.cenaC
+                    && hrac1.pocetHneKaret >= slechtic1.cenaH
+                    && hrac1.pocetModKaret >= slechtic1.cenaM
+                    && hrac1.pocetZelKaret >= slechtic1.cenaZ) {
+                //zvýraznit šlechtice
+                hrac1.pocetBodu = hrac1.pocetBodu + slechtic1.pocetBodu;
+                h1Slechtic.setImage(new Image(slechtic1.obrazek));
+                poleSlechtic1.setImage(null);
+                hrac1.jeNaTahu = false;
+                hrac2.jeNaTahu = true;
+
+            } else {
+                System.out.println("nemás dost karet");
+            }
+
+        } else if (hrac2.jeNaTahu == true) {
+ System.out.println("hrac 2");
+            if (hrac2.pocetBilKaret >= slechtic1.cenaB
+                    && hrac2.pocetCerKaret >= slechtic1.cenaC
+                    && hrac2.pocetHneKaret >= slechtic1.cenaH
+                    && hrac2.pocetModKaret >= slechtic1.cenaM
+                    && hrac2.pocetZelKaret >= slechtic1.cenaZ) {
+                //zvýraznit šlechtice
+                hrac2.pocetBodu = hrac2.pocetBodu + slechtic1.pocetBodu;
+                h2Slechtic.setImage(new Image(slechtic1.obrazek));
+                poleSlechtic1.setImage(null);
+                hrac1.jeNaTahu = true;
+                hrac2.jeNaTahu = false;
+            } else {
+                System.out.println("nemás dost karet");
+            }
         }
     }
 
     @FXML
     void poleSlechtic2Klik(MouseEvent event) {
+        System.out.println(" klik");
+        if (hrac1.jeNaTahu == true) {
 
+            System.out.println("hrac 1");
+            if (hrac1.pocetBilKaret >= slechtic2.cenaB
+                    && hrac1.pocetCerKaret >= slechtic2.cenaC
+                    && hrac1.pocetHneKaret >= slechtic2.cenaH
+                    && hrac1.pocetModKaret >= slechtic2.cenaM
+                    && hrac1.pocetZelKaret >= slechtic2.cenaZ) {
+                //zvýraznit šlechtice
+                hrac1.pocetBodu = hrac1.pocetBodu + slechtic2.pocetBodu;
+                h1Slechtic.setImage(new Image(slechtic2.obrazek));
+                poleSlechtic2.setImage(null);
+                hrac1.jeNaTahu = false;
+                hrac2.jeNaTahu = true;
+            } else {
+                System.out.println("nemás dost karet");
+            }
+
+        } else if (hrac2.jeNaTahu == true) {
+ System.out.println("hrac 2");
+            if (hrac2.pocetBilKaret >= slechtic2.cenaB
+                    && hrac2.pocetCerKaret >= slechtic2.cenaC
+                    && hrac2.pocetHneKaret >= slechtic2.cenaH
+                    && hrac2.pocetModKaret >= slechtic2.cenaM
+                    && hrac2.pocetZelKaret >= slechtic2.cenaZ) {
+                //zvýraznit šlechtice
+                hrac2.pocetBodu = hrac2.pocetBodu + slechtic2.pocetBodu;
+                h2Slechtic.setImage(new Image(slechtic2.obrazek));
+                poleSlechtic2.setImage(null);
+                hrac1.jeNaTahu = true;
+                hrac2.jeNaTahu = false;
+            } else {
+                System.out.println("nemás dost karet");
+            }
+        }
     }
 
     @FXML
     void poleSlechtic3Klik(MouseEvent event) {
+        if (hrac1.jeNaTahu == true) {
 
+            System.out.println("hrac 1");
+            if (hrac1.pocetBilKaret >= slechtic3.cenaB
+                    && hrac1.pocetCerKaret >= slechtic3.cenaC
+                    && hrac1.pocetHneKaret >= slechtic3.cenaH
+                    && hrac1.pocetModKaret >= slechtic3.cenaM
+                    && hrac1.pocetZelKaret >= slechtic3.cenaZ) {
+                //zvýraznit šlechtice
+                hrac1.pocetBodu = hrac1.pocetBodu + slechtic3.pocetBodu;
+                h1Slechtic.setImage(new Image(slechtic3.obrazek));
+                poleSlechtic3.setImage(null);
+                hrac1.jeNaTahu = false;
+                hrac2.jeNaTahu = true;
+
+            } else {
+                System.out.println("nemás dost karet");
+            }
+
+        } else if (hrac2.jeNaTahu == true) {
+ System.out.println("hrac 2");
+            if (hrac2.pocetBilKaret >= slechtic3.cenaB
+                    && hrac2.pocetCerKaret >= slechtic3.cenaC
+                    && hrac2.pocetHneKaret >= slechtic3.cenaH
+                    && hrac2.pocetModKaret >= slechtic3.cenaM
+                    && hrac2.pocetZelKaret >= slechtic3.cenaZ) {
+                //zvýraznit šlechtice
+                hrac2.pocetBodu = hrac2.pocetBodu + slechtic3.pocetBodu;
+                h2Slechtic.setImage(new Image(slechtic3.obrazek));
+                poleSlechtic3.setImage(null);
+                hrac1.jeNaTahu = true;
+                hrac2.jeNaTahu = false;
+            } else {
+                System.out.println("nemás dost karet");
+            }
+        }
     }
 
     @Override
@@ -628,8 +775,8 @@ public class HraController implements Initializable {
         hrac2 = new Hrac(1, false);
         g.generuj();
         f.generujSlechtice();
-        
         kresli();
+
     }
 
     public Karta nakupKarty(Karta karta) {
@@ -647,8 +794,7 @@ public class HraController implements Initializable {
                 hrac1.pocetModKamenu = hrac1.pocetModKamenu - karta.cenaM;
                 hrac1.pocetZelKamenu = hrac1.pocetZelKamenu - karta.cenaZ;
                 System.out.println("má dost kamenů");
-                hrac1.jeNaTahu = false;
-                hrac2.jeNaTahu = true;
+
                 switch (karta.barva) {
                     case "bila":
                         System.out.println("kupujes bílou");
@@ -1063,6 +1209,29 @@ public class HraController implements Initializable {
                         }
 
                         break;
+                }//---------------------------------------------------------------------------konec cashe
+                if ((hrac1.pocetBilKaret >= slechtic1.cenaB
+                        && hrac1.pocetCerKaret >= slechtic1.cenaC
+                        && hrac1.pocetHneKaret >= slechtic1.cenaH
+                        && hrac1.pocetModKaret >= slechtic1.cenaM
+                        && hrac1.pocetZelKaret >= slechtic1.cenaZ)
+                        || (hrac1.pocetBilKaret >= slechtic3.cenaB
+                        && hrac1.pocetCerKaret >= slechtic3.cenaC
+                        && hrac1.pocetHneKaret >= slechtic3.cenaH
+                        && hrac1.pocetModKaret >= slechtic3.cenaM
+                        && hrac1.pocetZelKaret >= slechtic3.cenaZ)
+                        || (hrac1.pocetBilKaret >= slechtic2.cenaB
+                        && hrac1.pocetCerKaret >= slechtic2.cenaC
+                        && hrac1.pocetHneKaret >= slechtic2.cenaH
+                        && hrac1.pocetModKaret >= slechtic2.cenaM
+                        && hrac1.pocetZelKaret >= slechtic2.cenaZ)) {
+
+                    muzeSlechtice = true;
+
+                    System.out.println("můžeš vzít šlechtice");
+                } else {
+                    hrac1.jeNaTahu = false;
+                    hrac2.jeNaTahu = true;
                 }
 
             } else {
@@ -1499,8 +1668,32 @@ public class HraController implements Initializable {
 
                         break;
                 }
+                if ((hrac2.pocetBilKaret >= slechtic1.cenaB
+                        && hrac2.pocetCerKaret >= slechtic1.cenaC
+                        && hrac2.pocetHneKaret >= slechtic1.cenaH
+                        && hrac2.pocetModKaret >= slechtic1.cenaM
+                        && hrac2.pocetZelKaret >= slechtic1.cenaZ)
+                        || (hrac2.pocetBilKaret >= slechtic3.cenaB
+                        && hrac2.pocetCerKaret >= slechtic3.cenaC
+                        && hrac2.pocetHneKaret >= slechtic3.cenaH
+                        && hrac2.pocetModKaret >= slechtic3.cenaM
+                        && hrac2.pocetZelKaret >= slechtic3.cenaZ)
+                        || (hrac2.pocetBilKaret >= slechtic2.cenaB
+                        && hrac2.pocetCerKaret >= slechtic2.cenaC
+                        && hrac2.pocetHneKaret >= slechtic2.cenaH
+                        && hrac2.pocetModKaret >= slechtic2.cenaM
+                        && hrac2.pocetZelKaret >= slechtic2.cenaZ)) {
+                    muzeSlechtice = true;
+                    System.out.println("můžeš vzít šlechtice");
+                } else {
+                    hrac1.jeNaTahu = true;
+                    hrac2.jeNaTahu = false;
+                }
+
             }
+
         }
+
         return null;
     }
 
