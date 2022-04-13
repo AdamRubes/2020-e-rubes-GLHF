@@ -23,6 +23,7 @@ public class Hrac {
     int pocetHneKaret = 0;
     int pocetBilKaret = 0;
     int pocetModKaret = 0;
+    boolean maSlechtice = false;
            
 
     public Hrac(int id, boolean jeNaTahu) {
