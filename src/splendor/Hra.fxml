@@ -139,11 +139,11 @@
                   <ImageView fx:id="poleSlechtic2" fitHeight="102.0" fitWidth="122.0" layoutX="38.0" onMouseEntered="#slechtic2Vstup" onMouseExited="#slechtic2Vystup" onMousePressed="#poleSlechtic2Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleSlechtic3" fitHeight="102.0" fitWidth="122.0" layoutX="83.0" onMouseEntered="#slechtic3Vstup" onMouseExited="#slechtic3Vystup" onMousePressed="#poleSlechtic3Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleKamenZolik" fitHeight="100.0" fitWidth="100.0" layoutX="544.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKamenBil" fitHeight="100.0" fitWidth="100.0" layoutX="544.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKamenMod" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKamenCer" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKamenZel" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKamenHne" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenBil" fitHeight="100.0" fitWidth="100.0" layoutX="544.0" layoutY="105.0" pickOnBounds="true" onMousePressed="#poleKamenBilKlik"  preserveRatio="true" />
+                  <ImageView fx:id="poleKamenMod" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" layoutY="105.0" pickOnBounds="true" onMousePressed="#poleKamenModKlik"  preserveRatio="true" />
+                  <ImageView fx:id="poleKamenCer" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" pickOnBounds="true" onMousePressed="#poleKamenCerKlik"   preserveRatio="true" />
+                  <ImageView fx:id="poleKamenZel" fitHeight="100.0" fitWidth="100.0" layoutX="435.0" layoutY="105.0" onMousePressed="#poleKamenZelKlik"   pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="poleKamenHne" fitHeight="100.0" fitWidth="100.0" layoutX="329.0" onMousePressed="#poleKamenHneKlik"  pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>

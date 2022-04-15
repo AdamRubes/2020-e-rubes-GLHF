@@ -23,9 +23,12 @@ public class Hrac {
     int pocetHneKaret = 0;
     int pocetBilKaret = 0;
     int pocetModKaret = 0;
+    boolean muzeSlechtice = false;
     boolean maSlechtice = false;
-           
-
+    String prvniVzatyKamen = null;      
+    String druhyVzatyKamen = null;
+    String tretiVzatyKamen = null;
+    
     public Hrac(int id, boolean jeNaTahu) {
         this.id = id;
         this.jeNaTahu = jeNaTahu;

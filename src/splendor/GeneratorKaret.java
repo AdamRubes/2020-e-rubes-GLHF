@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 /**
  *
@@ -166,7 +165,7 @@ public class GeneratorKaret implements Serializable {
         while (intList.contains(a)) {
             randomNum = rand.nextInt(20);
             a = randomNum;
-            System.out.println("duplicitní karta" + " nové " + a);
+            //System.out.println("duplicitní karta" + " nové " + a);
         }
 
         indexZabranychKaret3[i] = a;
