@@ -48,6 +48,8 @@ public class HraController implements Initializable {
     Hrac hrac1;
     Hrac hrac2;
 
+    BankKamenu bankCentralni;
+
     boolean muzeSlechtice = false;
 
     @FXML
@@ -344,24 +346,120 @@ public class HraController implements Initializable {
     private ImageView poleKamenZolik;
 
     @FXML
+    private ImageView poleKamenZolik1;
+
+    @FXML
+    private ImageView poleKamenZolik2;
+
+    @FXML
     private ImageView poleKamenBil;
+
+    @FXML
+    private ImageView poleKamenBil1;
+
+    @FXML
+    private ImageView poleKamenBil2;
 
     @FXML
     private ImageView poleKamenMod;
 
     @FXML
+    private ImageView poleKamenMod1;
+
+    @FXML
+    private ImageView poleKamenMod2;
+
+    @FXML
     private ImageView poleKamenCer;
+
+    @FXML
+    private ImageView poleKamenCer1;
+
+    @FXML
+    private ImageView poleKamenCer2;
 
     @FXML
     private ImageView poleKamenZel;
 
     @FXML
+    private ImageView poleKamenZel1;
+
+    @FXML
+    private ImageView poleKamenZel2;
+
+    @FXML
     private ImageView poleKamenHne;
+
+    @FXML
+    private ImageView poleKamenHne1;
+
+    @FXML
+    private ImageView poleKamenHne2;
 
     @FXML
     private Text textPoleHrac2;
     @FXML
     private Text textPoleHrac1;
+
+    @FXML
+    private Text textBodyH2;
+
+    @FXML
+    private Text textBodyH1;
+
+    @FXML
+    private Text textPocetHne;
+
+    @FXML
+    private Text textPocetHne1;
+
+    @FXML
+    private Text textPocetHne2;
+
+    @FXML
+    private Text textPocetCer;
+
+    @FXML
+    private Text textPocetCer1;
+
+    @FXML
+    private Text textPocetCer2;
+
+    @FXML
+    private Text textPocetZel;
+
+    @FXML
+    private Text textPocetZel1;
+
+    @FXML
+    private Text textPocetZel2;
+
+    @FXML
+    private Text textPocetMod;
+
+    @FXML
+    private Text textPocetMod1;
+
+    @FXML
+    private Text textPocetMod2;
+
+    @FXML
+    private Text textPocetBil;
+
+    @FXML
+    private Text textPocetBil1;
+
+    @FXML
+    private Text textPocetBil2;
+
+    @FXML
+    private Text textPocetZol;
+
+    @FXML
+    private Text textPocetZol1;
+
+    @FXML
+    private Text textPocetZol2;
 
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
@@ -382,6 +480,27 @@ public class HraController implements Initializable {
         poleKamenZolik.setImage(new Image("Pics/Kameny/zla.png"));
         poleKamenZel.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne.setImage(new Image("Pics/Kameny/hne.png"));
+
+        poleKamenBil1.setImage(new Image("Pics/Kameny/bil.png"));
+        poleKamenMod1.setImage(new Image("Pics/Kameny/mod.png"));
+        poleKamenCer1.setImage(new Image("Pics/Kameny/cer.png"));
+        poleKamenZolik1.setImage(new Image("Pics/Kameny/zla.png"));
+        poleKamenZel1.setImage(new Image("Pics/Kameny/zeleny.png"));
+        poleKamenHne1.setImage(new Image("Pics/Kameny/hne.png"));
+
+        poleKamenBil2.setImage(new Image("Pics/Kameny/bil.png"));
+        poleKamenMod2.setImage(new Image("Pics/Kameny/mod.png"));
+        poleKamenCer2.setImage(new Image("Pics/Kameny/cer.png"));
+        poleKamenZolik2.setImage(new Image("Pics/Kameny/zla.png"));
+        poleKamenZel2.setImage(new Image("Pics/Kameny/zeleny.png"));
+        poleKamenHne2.setImage(new Image("Pics/Kameny/hne.png"));
+
+        textPocetBil.setText("4");
+        textPocetMod.setText("4");
+        textPocetCer.setText("4");
+        textPocetZol.setText("4");
+        textPocetZel.setText("4");
+        textPocetHne.setText("4");
     }
 
     //metoda pro načítání FXML
@@ -521,7 +640,43 @@ public class HraController implements Initializable {
 
     }
 
-    void aktualizaceStavu() {
+    void aktualizaceBodu() {
+        String x = Integer.toString(hrac1.pocetBodu);
+        String y = Integer.toString(hrac2.pocetBodu);
+
+        textBodyH1.setText(x + " b.");
+        textBodyH2.setText(y + " b.");
+        if (hrac1.pocetBodu >= 12) {
+            System.out.println("vyhral jsi 1");
+            //nacist konec hry
+        } else if (hrac2.pocetBodu >= 12) {
+            System.out.println("vyhral jsi 2");
+            //nacist konec hry
+        }
+
+    }
+
+    void aktualizaceKamenu() {
+        textPocetBil1.setText(Integer.toString(hrac1.pocetBilKamenu));
+        textPocetCer1.setText(Integer.toString(hrac1.pocetCerKamenu));
+        textPocetZel1.setText(Integer.toString(hrac1.pocetZelKamenu));
+        textPocetMod1.setText(Integer.toString(hrac1.pocetModKamenu));
+        textPocetHne1.setText(Integer.toString(hrac1.pocetHneKamenu));
+        textPocetZol1.setText(Integer.toString(hrac1.pocetZoliku));
+
+        textPocetBil2.setText(Integer.toString(hrac2.pocetBilKamenu));
+        textPocetCer2.setText(Integer.toString(hrac2.pocetCerKamenu));
+        textPocetZel2.setText(Integer.toString(hrac2.pocetZelKamenu));
+        textPocetMod2.setText(Integer.toString(hrac2.pocetModKamenu));
+        textPocetHne2.setText(Integer.toString(hrac2.pocetHneKamenu));
+        textPocetZol2.setText(Integer.toString(hrac2.pocetZoliku));
+
+        textPocetBil.setText(Integer.toString(bankCentralni.pocetBilKamenu));
+        textPocetCer.setText(Integer.toString(bankCentralni.pocetCerKamenu));
+        textPocetZel.setText(Integer.toString(bankCentralni.pocetZelKamenu));
+        textPocetMod.setText(Integer.toString(bankCentralni.pocetModKamenu));
+        textPocetHne.setText(Integer.toString(bankCentralni.pocetHneKamenu));
+        textPocetZol.setText(Integer.toString(bankCentralni.pocetZoliku));
 
     }
 
@@ -595,13 +750,13 @@ public class HraController implements Initializable {
         System.out.println("klik");
         if (hrac1.jeNaTahu == true) {
             System.out.println("h1 pred nakupem");
-            nakupKamenu(hrac1,"bila");
+            nakupKamenu(hrac1, "bila");
             System.out.println("h1 po nakupu");
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
-            nakupKamenu(hrac2,"bila");
+            nakupKamenu(hrac2, "bila");
             System.out.println("h2 po nakupu");
-            
+
         }
     }
 
@@ -610,11 +765,11 @@ public class HraController implements Initializable {
         System.out.println("klik");
         if (hrac1.jeNaTahu == true) {
             System.out.println("h1 pred nakupem");
-            nakupKamenu(hrac1,"modra");
+            nakupKamenu(hrac1, "modra");
             System.out.println("h1 po nakupu");
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
-            nakupKamenu(hrac2,"modra");
+            nakupKamenu(hrac2, "modra");
             System.out.println("h2 po nakupu");
         }
     }
@@ -624,11 +779,11 @@ public class HraController implements Initializable {
         System.out.println("klik");
         if (hrac1.jeNaTahu == true) {
             System.out.println("h1 pred nakupem");
-            nakupKamenu(hrac1,"cervena");
+            nakupKamenu(hrac1, "cervena");
             System.out.println("h1 po nakupu");
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
-            nakupKamenu(hrac2,"cervena");
+            nakupKamenu(hrac2, "cervena");
             System.out.println("h2 po nakupu");
         }
     }
@@ -638,11 +793,11 @@ public class HraController implements Initializable {
         System.out.println("klik");
         if (hrac1.jeNaTahu == true) {
             System.out.println("h1 pred nakupem");
-            nakupKamenu(hrac1,"zelena");
+            nakupKamenu(hrac1, "zelena");
             System.out.println("h1 po nakupu");
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
-            nakupKamenu(hrac2,"zelena");
+            nakupKamenu(hrac2, "zelena");
             System.out.println("h2 po nakupu");
         }
     }
@@ -652,116 +807,153 @@ public class HraController implements Initializable {
         System.out.println("klik");
         if (hrac1.jeNaTahu == true) {
             System.out.println("h1 pred nakupem");
-            nakupKamenu(hrac1,"hneda");
+            nakupKamenu(hrac1, "hneda");
             System.out.println("h1 po nakupu");
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
-            nakupKamenu(hrac2,"hneda");
+            nakupKamenu(hrac2, "hneda");
             System.out.println("h2 po nakupu");
+        }
+    }
+
+    @FXML
+    void ukoncitTah() {
+        if (hrac1.jeNaTahu == true) {
+            hrac2JeNaTahu();
+        } else if (hrac2.jeNaTahu == true) {
+            hrac1JeNaTahu();
         }
     }
 
     void nakupKamenu(Hrac hrac, String barva) {
         if (hrac.jeNaTahu == true) {
             if (hrac.tretiVzatyKamen == null) {
-                if ((hrac.prvniVzatyKamen != hrac.druhyVzatyKamen) || (hrac.prvniVzatyKamen == null && hrac.druhyVzatyKamen == null)) {
+                if ((hrac.prvniVzatyKamen != hrac.druhyVzatyKamen) || (hrac.prvniVzatyKamen == null && hrac.druhyVzatyKamen == null)) {//nelze použit equals kvůli null
                     switch (barva) {
                         case ("cervena"):
-                            if (hrac.prvniVzatyKamen != "cervena" && hrac.druhyVzatyKamen != "cervena") {
+                            if (hrac.prvniVzatyKamen == null) {
                                 hrac.pocetCerKamenu = hrac.pocetCerKamenu + 1;
-                                System.out.println("vzal sis cervenou");
-                                if (hrac.prvniVzatyKamen == null) {
-                                    hrac.prvniVzatyKamen = "cervena";
-                                    System.out.println("pozice 1");
-                                } else if (hrac.druhyVzatyKamen == null) {
-                                    hrac.druhyVzatyKamen = "cervena";
-                                    System.out.println("pozice 2");
-                                } else if (hrac.tretiVzatyKamen == null) {
-                                    hrac.tretiVzatyKamen = "cervena";
-                                    System.out.println("pozice 3");
-                                }
-                            }else{
-                                System.out.println("nemůžeš vzít kamen stejné barvy");
+                                bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu - 1;
+                                //System.out.println("vzal sis cervena");
+                                hrac.prvniVzatyKamen = "cervena";
+                                System.out.println("pozice 1");
+
+                            } else if (hrac.druhyVzatyKamen == null) {
+                                hrac.pocetCerKamenu = hrac.pocetCerKamenu + 1;
+                                bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu - 1;
+                                //System.out.println("vzal sis cervena");
+                                hrac.druhyVzatyKamen = "cervena";
+                                System.out.println("pozice 2");
+
+                            } else if ((hrac.tretiVzatyKamen == null) && (!"cervena".equals(hrac.prvniVzatyKamen) || !"cervena".equals(hrac.druhyVzatyKamen))) {
+                                hrac.pocetCerKamenu = hrac.pocetCerKamenu + 1;
+                                bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu - 1;
+                                //System.out.println("vzal sis cervena");
+                                hrac.tretiVzatyKamen = "cervena";
+                                System.out.println("pozice 3");
                             }
-                            
+
                             break;
                         case ("zelena"):
-                            if (hrac.prvniVzatyKamen != "zelena" && hrac.druhyVzatyKamen != "zelena") {
+                            if (hrac.prvniVzatyKamen == null) {
                                 hrac.pocetZelKamenu = hrac.pocetZelKamenu + 1;
-                                System.out.println("vzal sis zelena");
-                                if (hrac.prvniVzatyKamen == null) {
-                                    hrac.prvniVzatyKamen = "zelena";
-                                    System.out.println("pozice 1");
-                                } else if (hrac.druhyVzatyKamen == null) {
-                                    hrac.druhyVzatyKamen = "zelena";
-                                    System.out.println("pozice 2");
-                                } else if (hrac.tretiVzatyKamen == null) {
-                                    hrac.tretiVzatyKamen = "zelena";
-                                    System.out.println("pozice 3");
-                                }
-                            }else{
-                                System.out.println("nemůžeš vzít kamen stejné barvy");
+                                bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu - 1;
+                                // System.out.println("vzal sis zelena");
+                                hrac.prvniVzatyKamen = "zelena";
+                                System.out.println("pozice 1");
+
+                            } else if (hrac.druhyVzatyKamen == null) {
+                                hrac.pocetZelKamenu = hrac.pocetZelKamenu + 1;
+                                bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu - 1;
+                                //System.out.println("vzal sis zelena");
+                                hrac.druhyVzatyKamen = "zelena";
+                                System.out.println("pozice 2");
+
+                            } else if ((hrac.tretiVzatyKamen == null) && (!"zelena".equals(hrac.prvniVzatyKamen) || !"zelena".equals(hrac.druhyVzatyKamen))) {
+                                hrac.pocetZelKamenu = hrac.pocetZelKamenu + 1;
+                                bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu - 1;
+                                //System.out.println("vzal sis zelena");
+                                hrac.tretiVzatyKamen = "zelena";
+                                System.out.println("pozice 3");
                             }
                             break;
                         case ("bila"):
-                            if (hrac.prvniVzatyKamen != "bila" && hrac.druhyVzatyKamen != "bila") {
+                            if (hrac.prvniVzatyKamen == null) {
                                 hrac.pocetBilKamenu = hrac.pocetBilKamenu + 1;
-                                System.out.println("vzal sis bila");
-                                if (hrac.prvniVzatyKamen == null) {
-                                    hrac.prvniVzatyKamen = "bila";
-                                    System.out.println("pozice 1");
-                                } else if (hrac.druhyVzatyKamen == null) {
-                                    hrac.druhyVzatyKamen = "bila";
-                                    System.out.println("pozice 2");
-                                } else if (hrac.tretiVzatyKamen == null) {
-                                    hrac.tretiVzatyKamen = "bila";
-                                    System.out.println("pozice 3");
-                                }
-                            }else{
-                                System.out.println("nemůžeš vzít kamen stejné barvy");
+                                bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu - 1;
+                                // System.out.println("vzal sis bila");
+                                hrac.prvniVzatyKamen = "bila";
+                                System.out.println("pozice 1");
+
+                            } else if (hrac.druhyVzatyKamen == null) {
+                                hrac.pocetBilKamenu = hrac.pocetBilKamenu + 1;
+                                bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu - 1;
+                                //System.out.println("vzal sis bila");
+                                hrac.druhyVzatyKamen = "bila";
+                                System.out.println("pozice 1");
+
+                            } else if ((hrac.tretiVzatyKamen == null) && (!"bila".equals(hrac.prvniVzatyKamen) || !"bila".equals(hrac.druhyVzatyKamen))) {
+                                hrac.pocetBilKamenu = hrac.pocetBilKamenu + 1;
+                                bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu - 1;
+                                //System.out.println("vzal sis bila");
+                                hrac.tretiVzatyKamen = "bila";
+                                System.out.println("pozice 1");
                             }
+
                             break;
+
                         case ("hneda"):
-                           if (hrac.prvniVzatyKamen != "hneda" && hrac.druhyVzatyKamen != "hneda") {
+                            if (hrac.prvniVzatyKamen == null) {
                                 hrac.pocetHneKamenu = hrac.pocetHneKamenu + 1;
-                                System.out.println("vzal sis hneda");
-                                if (hrac.prvniVzatyKamen == null) {
-                                    hrac.prvniVzatyKamen = "hneda";
-                                    System.out.println("pozice 1");
-                                } else if (hrac.druhyVzatyKamen == null) {
-                                    hrac.druhyVzatyKamen = "hneda";
-                                    System.out.println("pozice 2");
-                                } else if (hrac.tretiVzatyKamen == null) {
-                                    hrac.tretiVzatyKamen = "hneda";
-                                    System.out.println("pozice 3");
-                                }
-                            }else{
-                                System.out.println("nemůžeš vzít kamen stejné barvy");
+                                bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.prvniVzatyKamen = "hneda";
+                                System.out.println("pozice 1");
+
+                            } else if (hrac.druhyVzatyKamen == null) {
+                                hrac.pocetHneKamenu = hrac.pocetHneKamenu + 1;
+                                bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.druhyVzatyKamen = "hneda";
+                                System.out.println("pozice 2");
+
+                            } else if ((hrac.tretiVzatyKamen == null) && (!"hneda".equals(hrac.prvniVzatyKamen) || !"hneda".equals(hrac.druhyVzatyKamen))) {
+                                hrac.pocetHneKamenu = hrac.pocetHneKamenu + 1;
+                                bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.tretiVzatyKamen = "hneda";
+                                System.out.println("pozice ");
                             }
                             break;
                         case ("modra"):
-                            if (hrac.prvniVzatyKamen != "modra" && hrac.druhyVzatyKamen != "modra") {
+                            if (hrac.prvniVzatyKamen == null) {
                                 hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
-                                System.out.println("vzal sis modra");
-                                if (hrac.prvniVzatyKamen == null) {
-                                    hrac.prvniVzatyKamen = "modra";
-                                    System.out.println("pozice 1");
-                                } else if (hrac.druhyVzatyKamen == null) {
-                                    hrac.druhyVzatyKamen = "modra";
-                                    System.out.println("pozice 2");
-                                } else if (hrac.tretiVzatyKamen == null) {
-                                    hrac.tretiVzatyKamen = "modra";
-                                    System.out.println("pozice 3");
-                                }
-                            }else{
-                                System.out.println("nemůžeš vzít kamen stejné barvy");
+                                bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.prvniVzatyKamen = "modra";
+                                System.out.println("pozice 1");
+
+                            } else if (hrac.druhyVzatyKamen == null) {
+                                hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
+                                bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.prvniVzatyKamen = "modra";
+                                System.out.println("pozice 2");
+
+                            } else if ((hrac.tretiVzatyKamen == null) && (!"modra".equals(hrac.prvniVzatyKamen) || !"modra".equals(hrac.druhyVzatyKamen))) {
+                                hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
+                                bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
+                                //System.out.println("vzal sis hneda");
+                                hrac.prvniVzatyKamen = "modra";
+                                System.out.println("pozice 3");
                             }
                             break;
+
                     }
                 } else {
                     System.out.println("můžeš vzít jen 2 kameny stejné barvy");
                 }
-            }else{
+            } else {
                 System.out.println("už máš 3 kameny");
             }
         } else {
@@ -770,27 +962,48 @@ public class HraController implements Initializable {
             }
 
         }
-        System.out.println(hrac.pocetBilKamenu+"bil");
-        System.out.println(hrac.pocetHneKamenu+"hne");
-        System.out.println(hrac.pocetCerKamenu+"cer");
-        System.out.println(hrac.pocetZelKamenu+"Zel");
-        System.out.println(hrac.pocetModKamenu+"mod");
+        aktualizaceKamenu();
+        /*
+        System.out.println(hrac.pocetBilKamenu + "bil");
+        System.out.println(hrac.pocetHneKamenu + "hne");
+        System.out.println(hrac.pocetCerKamenu + "cer");
+        System.out.println(hrac.pocetZelKamenu + "Zel");
+        System.out.println(hrac.pocetModKamenu + "mod");
+         */
+        
+        System.out.println(hrac.prvniVzatyKamen);
+        System.out.println(hrac.druhyVzatyKamen);
+        System.out.println(hrac.tretiVzatyKamen);
     }
 
     void hrac1JeNaTahu() {
+        aktualizaceBodu();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
         textPoleHrac1.setFill(Color.GREEN);
         textPoleHrac2.setFill(Color.RED);
         System.out.println("hrac 1 je na tahu");
+        hrac1.prvniVzatyKamen = null;
+        hrac1.druhyVzatyKamen = null;
+        hrac1.tretiVzatyKamen = null;
+        hrac2.prvniVzatyKamen = null;
+        hrac2.druhyVzatyKamen = null;
+        hrac2.tretiVzatyKamen = null;
     }
 
     void hrac2JeNaTahu() {
+        aktualizaceBodu();
         hrac1.jeNaTahu = false;
         hrac2.jeNaTahu = true;
         textPoleHrac1.setFill(Color.RED);
         textPoleHrac2.setFill(Color.GREEN);
         System.out.println("hrac 2 je na tahu");
+        hrac1.prvniVzatyKamen = null;
+        hrac1.druhyVzatyKamen = null;
+        hrac1.tretiVzatyKamen = null;
+        hrac2.prvniVzatyKamen = null;
+        hrac2.druhyVzatyKamen = null;
+        hrac2.tretiVzatyKamen = null;
     }
 
     void nakupSlechtice(Slechtic slechtic, ImageView puvodniLokaceSlechtice) { // node je to pole (poleSlechtic3)
@@ -877,6 +1090,9 @@ public class HraController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         hrac1 = new Hrac(1, true);
         hrac2 = new Hrac(1, false);
+
+        bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
+
         textPoleHrac1.setFill(Color.GREEN);
         textPoleHrac2.setFill(Color.RED);
         g.generuj();
@@ -885,20 +1101,55 @@ public class HraController implements Initializable {
 
     }
 
-    public Karta nakupKarty(Karta karta) {
+    public void nakupKarty(Karta karta) {
         File file;
         if (hrac1.jeNaTahu == true) {
             System.out.println("hrac 1 na tahu");
-            if ((karta.cenaB == 0 || hrac1.pocetBilKamenu >= karta.cenaB)
-                    && (karta.cenaC == 0 || hrac1.pocetCerKamenu >= karta.cenaC)
-                    && (karta.cenaH == 0 || hrac1.pocetHneKamenu >= karta.cenaH)
-                    && (karta.cenaM == 0 || hrac1.pocetModKamenu >= karta.cenaM)
-                    && (karta.cenaZ == 0 || hrac1.pocetZelKamenu >= karta.cenaZ)) {
-                hrac1.pocetBilKamenu = hrac1.pocetBilKamenu - karta.cenaB;
-                hrac1.pocetCerKamenu = hrac1.pocetCerKamenu - karta.cenaC;
-                hrac1.pocetHneKamenu = hrac1.pocetHneKamenu - karta.cenaH;
-                hrac1.pocetModKamenu = hrac1.pocetModKamenu - karta.cenaM;
-                hrac1.pocetZelKamenu = hrac1.pocetZelKamenu - karta.cenaZ;
+            if ((karta.cenaB == 0 || hrac1.pocetBilKamenu + hrac1.pocetBilKaret >= karta.cenaB)
+                    && (karta.cenaC == 0 || hrac1.pocetCerKamenu + hrac1.pocetCerKaret >= karta.cenaC)
+                    && (karta.cenaH == 0 || hrac1.pocetHneKamenu + hrac1.pocetHneKaret >= karta.cenaH)
+                    && (karta.cenaM == 0 || hrac1.pocetModKamenu + hrac1.pocetModKaret >= karta.cenaM)
+                    && (karta.cenaZ == 0 || hrac1.pocetZelKamenu + hrac1.pocetZelKaret >= karta.cenaZ)) {
+                int a = 0;
+                int b = 0;
+                int c = 0;
+                int d = 0;
+                int e = 0;
+
+                a = karta.cenaB - hrac1.pocetBilKaret;
+                b = karta.cenaC - hrac1.pocetCerKaret;
+                c = karta.cenaH - hrac1.pocetHneKaret;
+                d = karta.cenaM - hrac1.pocetModKaret;
+                e = karta.cenaZ - hrac1.pocetZelKaret;
+
+                if (a >= 0) {
+                    hrac1.pocetBilKamenu = hrac1.pocetBilKamenu - a;
+                    bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu + a;
+                }
+
+                if (b >= 0) {
+                    hrac1.pocetCerKamenu = hrac1.pocetCerKamenu - b;
+                    bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu + b;
+                }
+
+                if (c >= 0) {
+                    hrac1.pocetHneKamenu = hrac1.pocetHneKamenu - c;
+                    bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu + c;
+                }
+
+                if (d >= 0) {
+                    hrac1.pocetModKamenu = hrac1.pocetModKamenu - d;
+                    bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu + d;
+                }
+
+                if (e >= 0) {
+                    hrac1.pocetZelKamenu = hrac1.pocetZelKamenu - e;
+                    bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu + e;
+                }
+
+                aktualizaceKamenu();
+                aktualizaceBodu();
+
                 System.out.println("má dost kamenů");
 
                 switch (karta.barva) {
@@ -1369,7 +1620,7 @@ public class HraController implements Initializable {
                         hrac1.muzeSlechtice = true;
                     }
 
-                } else {
+                } else {// nemá na šlechtice
                     //System.out.println("hráč2 je na tahu");
                     hrac2JeNaTahu();
                 }
@@ -1381,16 +1632,51 @@ public class HraController implements Initializable {
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("hrac 2 na tahu");
 
-            if ((karta.cenaB == 0 || hrac2.pocetBilKamenu >= karta.cenaB)
-                    && (karta.cenaC == 0 || hrac2.pocetCerKamenu >= karta.cenaC)
-                    && (karta.cenaH == 0 || hrac2.pocetHneKamenu >= karta.cenaH)
-                    && (karta.cenaM == 0 || hrac2.pocetModKamenu >= karta.cenaM)
-                    && (karta.cenaZ == 0 || hrac2.pocetZelKamenu >= karta.cenaZ)) {
-                hrac2.pocetBilKamenu = hrac2.pocetBilKamenu - karta.cenaB;
-                hrac2.pocetCerKamenu = hrac2.pocetCerKamenu - karta.cenaC;
-                hrac2.pocetHneKamenu = hrac2.pocetHneKamenu - karta.cenaH;
-                hrac2.pocetModKamenu = hrac2.pocetModKamenu - karta.cenaM;
-                hrac2.pocetZelKamenu = hrac2.pocetZelKamenu - karta.cenaZ;
+            if ((karta.cenaB == 0 || hrac2.pocetBilKamenu + hrac2.pocetBilKaret >= karta.cenaB)
+                    && (karta.cenaC == 0 || hrac2.pocetCerKamenu + hrac2.pocetCerKaret >= karta.cenaC)
+                    && (karta.cenaH == 0 || hrac2.pocetHneKamenu + hrac2.pocetHneKaret >= karta.cenaH)
+                    && (karta.cenaM == 0 || hrac2.pocetModKamenu + hrac2.pocetModKaret >= karta.cenaM)
+                    && (karta.cenaZ == 0 || hrac2.pocetZelKamenu + hrac2.pocetZelKaret >= karta.cenaZ)) {
+
+                int a = 0;
+                int b = 0;
+                int c = 0;
+                int d = 0;
+                int e = 0;
+
+                a = karta.cenaB - hrac2.pocetBilKaret;
+                b = karta.cenaC - hrac2.pocetCerKaret;
+                c = karta.cenaH - hrac2.pocetHneKaret;
+                d = karta.cenaM - hrac2.pocetModKaret;
+                e = karta.cenaZ - hrac2.pocetZelKaret;
+
+                if (a >= 0) {
+                    hrac2.pocetBilKamenu = hrac2.pocetBilKamenu - a;
+                    bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu + a;
+                }
+
+                if (b >= 0) {
+                    hrac2.pocetCerKamenu = hrac2.pocetCerKamenu - b;
+                    bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu + b;
+                }
+
+                if (c >= 0) {
+                    hrac2.pocetHneKamenu = hrac2.pocetHneKamenu - c;
+                    bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu + c;
+                }
+
+                if (d >= 0) {
+                    hrac2.pocetModKamenu = hrac2.pocetModKamenu - d;
+                    bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu + d;
+                }
+
+                if (e >= 0) {
+                    hrac2.pocetZelKamenu = hrac2.pocetZelKamenu - e;
+                    bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu + e;
+                }
+
+                aktualizaceKamenu();
+                aktualizaceBodu();
                 System.out.println("má dost kamenů");
 
                 switch (karta.barva) {
@@ -1807,6 +2093,7 @@ public class HraController implements Initializable {
 
                         break;
                 }
+
                 if (((hrac2.pocetBilKaret >= slechtic1.cenaB
                         && hrac2.pocetCerKaret >= slechtic1.cenaC
                         && hrac2.pocetHneKaret >= slechtic1.cenaH
@@ -1864,11 +2151,12 @@ public class HraController implements Initializable {
                     hrac1JeNaTahu();
                 }
 
+            } else {
+                System.out.println("nemá dost penez");
             }
 
         }
 
-        return null;
     }
 
     ////// ANIMACE -->

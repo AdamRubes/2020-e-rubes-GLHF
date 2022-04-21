@@ -34,9 +34,8 @@ public class GeneratorKaret implements Serializable {
     public void generuj() {
         indexZabranychKaret3 = new Integer[20];
         indexZabranychKaret2 = new Integer[30];
-        indexZabranychKaret2 = new Integer[40];
-        
-        
+        indexZabranychKaret1 = new Integer[40];
+
         listKaret3.add(new Karta("zelena", 5, 0, 7, 0, 0, 3, 3, "Pics/Karty/zel3-2.jpg"));
         listKaret3.add(new Karta("zelena", 4, 3, 6, 0, 0, 3, 3, "Pics/Karty/zel3-4.jpg"));
         listKaret3.add(new Karta("zelena", 4, 0, 7, 0, 0, 0, 3, "Pics/Karty/zel3-1.jpg"));
@@ -142,12 +141,7 @@ public class GeneratorKaret implements Serializable {
         listKaret1.add(new Karta("zelena", 0, 0, 2, 2, 0, 0, 1, "Pics/Karty/zel1-6.jpg"));
         listKaret1.add(new Karta("zelena", 0, 2, 1, 0, 0, 0, 1, "Pics/Karty/zel1-7.jpg"));
         listKaret1.add(new Karta("zelena", 1, 0, 0, 0, 4, 0, 1, "Pics/Karty/zel1-8.jpg"));
-        
-        
-        
-        
-        
-        
+
         //listKaret1.add(new Karta("cervena", 0, 0, 0, 0, 0, 0, 0, "Pics/Karty/hne1-1.jpg"));
     }
 
@@ -170,15 +164,15 @@ public class GeneratorKaret implements Serializable {
 
         indexZabranychKaret3[i] = a;
         i++;
-       /* for (int i = 0; i <= 19; i++) {
+        /* for (int i = 0; i <= 19; i++) {
             System.out.println(i + " " + indexZabranychKaret3[i]);
         }*/
         return listKaret3.get(a);
 
     }
-    
-        public Karta najdiNovouKartu2() {
-        if (i == 29) {
+
+    public Karta najdiNovouKartu2() {
+        if (j == 29) {
             System.out.println("SUS");
             return new Karta("null", 999, 0, 0, 0, 0, 0, 0, "Pics/Karty/prazdnaKarta.jpg");
         }
@@ -189,46 +183,73 @@ public class GeneratorKaret implements Serializable {
 
         List<Integer> intList = new ArrayList<>(Arrays.asList(indexZabranychKaret2));//https://stackabuse.com/java-check-if-array-contains-value-or-element/
 
-        while (intList.contains(a)) {
-            randomNum = rand.nextInt(30);
-            a = randomNum;
-            System.out.println("duplicitní karta" + " nové " + a);
+        for (int x = 0; x < 10; x++) {
+            if (intList.contains(a) == true) {
+                randomNum = rand.nextInt(30);
+                a = randomNum;
+                System.out.println("duplicitní karta" + " nové " + a);
+            }else{
+                System.out.println("není duplicitní");
+                break;
+            }
+            
         }
-
+        if(intList.contains(a) == true){
+            a = 0;
+            System.out.println("Duplikát for nepomohl - zacatek while");
+            while(intList.contains(a) == true){
+            a++;
+        }
+            System.out.println("nové" + a);
+        }
+        
         indexZabranychKaret2[j] = a;
         j++;
+
         /*for (int i = 0; i <= 19; i++) {
             System.out.println(i + " " + indexZabranychKaret3[i]);
         }*/
         return listKaret2.get(a);
 
     }
-        
-        public Karta najdiNovouKartu1() {
-        if (i == 39) {
+
+    public Karta najdiNovouKartu1() {
+        if (k == 39) {
             System.out.println("SUS");
-                    
-                    
+
             return new Karta("null", 999, 0, 0, 0, 0, 0, 0, "Pics/Karty/prazdnaKarta.jpg");
+
         }
         Random rand = new Random();
         int randomNum = rand.nextInt(40);
         int a = randomNum;
-        //System.out.println(a);
+        
+        
+        List<Integer> intList = new ArrayList<>(Arrays.asList(indexZabranychKaret1));//https://stackabuse.com/java-check-if-array-contains-value-or-element/
 
-       /* List<Integer> intList = new ArrayList<>(Arrays.asList(indexZabranychKaret1));//https://stackabuse.com/java-check-if-array-contains-value-or-element/
-
-        while (intList.contains(a)) {
-            randomNum = rand.nextInt(40);
-            a = randomNum;
-            System.out.println("duplicitní karta" + " nové " + a);
+        
+     for (int x = 0; x < 10; x++) {
+            if (intList.contains(a) == true) {
+                randomNum = rand.nextInt(30);
+                a = randomNum;
+                System.out.println("duplicitní karta" + " nové " + a);
+            }else{
+                System.out.println("není duplicitní");
+                break;
+            }
+            
         }
-
+        if(intList.contains(a) == true){
+            a = 0;
+            System.out.println("Duplikát for nepomohl - zacatek while");
+            while(intList.contains(a) == true){
+            a++;
+        }
+            System.out.println("nové" + a);
+        }
         indexZabranychKaret1[k] = a;
         k++;
-        /*for (int i = 0; i <= 19; i++) {
-            System.out.println(i + " " + indexZabranychKaret3[i]);
-        }*/
+        
         return listKaret1.get(a);
 
     }

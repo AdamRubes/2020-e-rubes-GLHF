@@ -12,11 +12,12 @@ package splendor;
 public class Hrac {
     int id;
     boolean jeNaTahu;
-    int pocetZelKamenu = 500;
-    int pocetCerKamenu = 500;
-    int pocetHneKamenu = 500;
-    int pocetBilKamenu = 500;
-    int pocetModKamenu = 500;
+    int pocetZelKamenu = 0;
+    int pocetCerKamenu = 0;
+    int pocetHneKamenu = 0;
+    int pocetBilKamenu = 0;
+    int pocetModKamenu = 0;
+    int pocetZoliku = 0;
     int pocetBodu = 0;
     int pocetZelKaret = 0;
     int pocetCerKaret = 0;
