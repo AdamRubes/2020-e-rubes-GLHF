@@ -1082,7 +1082,6 @@ public class HraController implements Initializable {
             } else if (hrac2.jeNaTahu == true && hrac2.maSlechtice == false) {
                 System.out.println("muzes vzit slechtice");
             }
-
         }
     }
 
