@@ -10,7 +10,7 @@ package splendor;
  * @author Adam
  */
 public class Hrac {
-    int id;
+    String id;
     boolean jeNaTahu;
     int pocetZelKamenu = 0;
     int pocetCerKamenu = 0;
@@ -30,7 +30,7 @@ public class Hrac {
     String druhyVzatyKamen = null;
     String tretiVzatyKamen = null;
     
-    public Hrac(int id, boolean jeNaTahu) {
+    public Hrac(String id, boolean jeNaTahu) {
         this.id = id;
         this.jeNaTahu = jeNaTahu;
     }

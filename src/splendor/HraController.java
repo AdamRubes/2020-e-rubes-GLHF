@@ -8,7 +8,11 @@ package splendor;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,6 +48,8 @@ public class HraController implements Initializable {
     Slechtic slechtic1;
     Slechtic slechtic2;
     Slechtic slechtic3;
+
+    UkladacVysledku ukladac;
 
     Hrac hrac1;
     Hrac hrac2;
@@ -594,6 +600,18 @@ public class HraController implements Initializable {
         }
     }
 
+    public void konecHry(Hrac vitez, Hrac porazeny) throws IOException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String s = dtf.format(now);
+        System.out.println(dtf.format(now));
+
+        VysledkyHry vysledky = new VysledkyHry(vitez.id, porazeny.id, vitez.pocetBodu, porazeny.pocetBodu, s);
+        String path = ukladac.připravSoubor();
+        ukladac.ulozHru(path, vysledky);
+        nacistFXML("Vyhodnoceni");
+    }
+
     public void vykresliKartu() {// argument "1"
 
         poleKarty1.setImage(new Image(karta1.obrazek));
@@ -646,12 +664,20 @@ public class HraController implements Initializable {
 
         textBodyH1.setText(x + " b.");
         textBodyH2.setText(y + " b.");
-        if (hrac1.pocetBodu >= 12) {
+        if (hrac1.pocetBodu >= 15) {
             System.out.println("vyhral jsi 1");
-            //nacist konec hry
-        } else if (hrac2.pocetBodu >= 12) {
+            try {
+                konecHry(hrac1, hrac2);
+            } catch (IOException ex) {
+                Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (hrac2.pocetBodu >= 15) {
             System.out.println("vyhral jsi 2");
-            //nacist konec hry
+            try {
+                konecHry(hrac2, hrac1);
+            } catch (IOException ex) {
+                Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }
@@ -752,10 +778,16 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "bila");
             System.out.println("h1 po nakupu");
+            if (hrac1.tretiVzatyKamen != null) {
+                hrac2JeNaTahu();
+            }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "bila");
             System.out.println("h2 po nakupu");
+            if (hrac2.tretiVzatyKamen != null) {
+                hrac1JeNaTahu();
+            }
 
         }
     }
@@ -767,10 +799,16 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "modra");
             System.out.println("h1 po nakupu");
+            if (hrac1.tretiVzatyKamen != null) {
+                hrac2JeNaTahu();
+            }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "modra");
             System.out.println("h2 po nakupu");
+            if (hrac2.tretiVzatyKamen != null) {
+                hrac1JeNaTahu();
+            }
         }
     }
 
@@ -781,10 +819,16 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "cervena");
             System.out.println("h1 po nakupu");
+            if (hrac1.tretiVzatyKamen != null) {
+                hrac2JeNaTahu();
+            }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "cervena");
             System.out.println("h2 po nakupu");
+            if (hrac2.tretiVzatyKamen != null) {
+                hrac1JeNaTahu();
+            }
         }
     }
 
@@ -795,10 +839,16 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "zelena");
             System.out.println("h1 po nakupu");
+            if (hrac1.tretiVzatyKamen != null) {
+                hrac2JeNaTahu();
+            }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "zelena");
             System.out.println("h2 po nakupu");
+            if (hrac2.tretiVzatyKamen != null) {
+                hrac1JeNaTahu();
+            }
         }
     }
 
@@ -809,20 +859,28 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "hneda");
             System.out.println("h1 po nakupu");
+            if (hrac1.tretiVzatyKamen != null) {
+                hrac2JeNaTahu();
+            }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "hneda");
             System.out.println("h2 po nakupu");
+            if (hrac2.tretiVzatyKamen != null) {
+                hrac1JeNaTahu();
+            }
         }
     }
 
     @FXML
-    void ukoncitTah() {
-        if (hrac1.jeNaTahu == true) {
+    void ukoncitTah() {// nejspíš redundantní -------------- odstranit
+        
+        hrac1.pocetBodu += 15;
+       /* if (hrac1.jeNaTahu == true) {
             hrac2JeNaTahu();
         } else if (hrac2.jeNaTahu == true) {
             hrac1JeNaTahu();
-        }
+        }*/
     }
 
     void nakupKamenu(Hrac hrac, String barva) {
@@ -937,14 +995,14 @@ public class HraController implements Initializable {
                                 hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
                                 bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
                                 //System.out.println("vzal sis hneda");
-                                hrac.prvniVzatyKamen = "modra";
+                                hrac.druhyVzatyKamen = "modra";
                                 System.out.println("pozice 2");
 
                             } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("modra") || !hrac.prvniVzatyKamen.equals("modra"))) {
                                 hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
                                 bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
                                 //System.out.println("vzal sis hneda");
-                                hrac.prvniVzatyKamen = "modra";
+                                hrac.tretiVzatyKamen = "modra";
                                 System.out.println("pozice 3");
                             }
                             break;
@@ -970,13 +1028,14 @@ public class HraController implements Initializable {
         System.out.println(hrac.pocetZelKamenu + "Zel");
         System.out.println(hrac.pocetModKamenu + "mod");
          */
-        
+
         System.out.println(hrac.prvniVzatyKamen);
         System.out.println(hrac.druhyVzatyKamen);
         System.out.println(hrac.tretiVzatyKamen);
     }
 
     void hrac1JeNaTahu() {
+        
         aktualizaceBodu();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
@@ -1087,9 +1146,9 @@ public class HraController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        hrac1 = new Hrac(1, true);
-        hrac2 = new Hrac(1, false);
-
+        hrac1 = new Hrac("Hrac1", true);
+        hrac2 = new Hrac("Hrac 2", false);
+        ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
 
         textPoleHrac1.setFill(Color.GREEN);
@@ -1097,6 +1156,7 @@ public class HraController implements Initializable {
         g.generuj();
         f.generujSlechtice();
         kresli();
+        //System.out.println(ukladac.připravSoubor());
 
     }
 
