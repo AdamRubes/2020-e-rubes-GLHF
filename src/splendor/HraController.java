@@ -845,7 +845,7 @@ public class HraController implements Initializable {
                                 hrac.druhyVzatyKamen = "cervena";
                                 System.out.println("pozice 2");
 
-                            } else if ((hrac.tretiVzatyKamen == null) && (!"cervena".equals(hrac.prvniVzatyKamen) || !"cervena".equals(hrac.druhyVzatyKamen))) {
+                            } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("cervena") || !hrac.prvniVzatyKamen.equals("cervena"))) {
                                 hrac.pocetCerKamenu = hrac.pocetCerKamenu + 1;
                                 bankCentralni.pocetCerKamenu = bankCentralni.pocetCerKamenu - 1;
                                 //System.out.println("vzal sis cervena");
@@ -869,7 +869,7 @@ public class HraController implements Initializable {
                                 hrac.druhyVzatyKamen = "zelena";
                                 System.out.println("pozice 2");
 
-                            } else if ((hrac.tretiVzatyKamen == null) && (!"zelena".equals(hrac.prvniVzatyKamen) || !"zelena".equals(hrac.druhyVzatyKamen))) {
+                            } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("zelena") || !hrac.prvniVzatyKamen.equals("zelena"))) {
                                 hrac.pocetZelKamenu = hrac.pocetZelKamenu + 1;
                                 bankCentralni.pocetZelKamenu = bankCentralni.pocetZelKamenu - 1;
                                 //System.out.println("vzal sis zelena");
@@ -892,7 +892,7 @@ public class HraController implements Initializable {
                                 hrac.druhyVzatyKamen = "bila";
                                 System.out.println("pozice 1");
 
-                            } else if ((hrac.tretiVzatyKamen == null) && (!"bila".equals(hrac.prvniVzatyKamen) || !"bila".equals(hrac.druhyVzatyKamen))) {
+                            } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("bila") || !hrac.prvniVzatyKamen.equals("bila"))) {
                                 hrac.pocetBilKamenu = hrac.pocetBilKamenu + 1;
                                 bankCentralni.pocetBilKamenu = bankCentralni.pocetBilKamenu - 1;
                                 //System.out.println("vzal sis bila");
@@ -917,7 +917,7 @@ public class HraController implements Initializable {
                                 hrac.druhyVzatyKamen = "hneda";
                                 System.out.println("pozice 2");
 
-                            } else if ((hrac.tretiVzatyKamen == null) && (!"hneda".equals(hrac.prvniVzatyKamen) || !"hneda".equals(hrac.druhyVzatyKamen))) {
+                            } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("hneda") || !hrac.prvniVzatyKamen.equals("hneda"))) {
                                 hrac.pocetHneKamenu = hrac.pocetHneKamenu + 1;
                                 bankCentralni.pocetHneKamenu = bankCentralni.pocetHneKamenu - 1;
                                 //System.out.println("vzal sis hneda");
@@ -940,7 +940,7 @@ public class HraController implements Initializable {
                                 hrac.prvniVzatyKamen = "modra";
                                 System.out.println("pozice 2");
 
-                            } else if ((hrac.tretiVzatyKamen == null) && (!"modra".equals(hrac.prvniVzatyKamen) || !"modra".equals(hrac.druhyVzatyKamen))) {
+                            } else if ((hrac.tretiVzatyKamen == null) && (!hrac.prvniVzatyKamen.equals("modra") || !hrac.prvniVzatyKamen.equals("modra"))) {
                                 hrac.pocetModKamenu = hrac.pocetModKamenu + 1;
                                 bankCentralni.pocetModKamenu = bankCentralni.pocetModKamenu - 1;
                                 //System.out.println("vzal sis hneda");
@@ -1006,7 +1006,7 @@ public class HraController implements Initializable {
         hrac2.tretiVzatyKamen = null;
     }
 
-    void nakupSlechtice(Slechtic slechtic, ImageView puvodniLokaceSlechtice) { // node je to pole (poleSlechtic3)
+    void nakupSlechtice(Slechtic slechtic, ImageView puvodniLokaceSlechtice) { // node, je to pole (poleSlechtic3)
         System.out.println("v metodě nakupSlechtice");
         if (hrac1.jeNaTahu == true && hrac1.maSlechtice == false) {
 
@@ -1101,7 +1101,6 @@ public class HraController implements Initializable {
     }
 
     public void nakupKarty(Karta karta) {
-        File file;
         if (hrac1.jeNaTahu == true) {
             System.out.println("hrac 1 na tahu");
             if ((karta.cenaB == 0 || hrac1.pocetBilKamenu + hrac1.pocetBilKaret >= karta.cenaB)
@@ -1109,11 +1108,11 @@ public class HraController implements Initializable {
                     && (karta.cenaH == 0 || hrac1.pocetHneKamenu + hrac1.pocetHneKaret >= karta.cenaH)
                     && (karta.cenaM == 0 || hrac1.pocetModKamenu + hrac1.pocetModKaret >= karta.cenaM)
                     && (karta.cenaZ == 0 || hrac1.pocetZelKamenu + hrac1.pocetZelKaret >= karta.cenaZ)) {
-                int a = 0;
-                int b = 0;
-                int c = 0;
-                int d = 0;
-                int e = 0;
+                int a;
+                int b;
+                int c;
+                int d;
+                int e;
 
                 a = karta.cenaB - hrac1.pocetBilKaret;
                 b = karta.cenaC - hrac1.pocetCerKaret;
@@ -1637,11 +1636,11 @@ public class HraController implements Initializable {
                     && (karta.cenaM == 0 || hrac2.pocetModKamenu + hrac2.pocetModKaret >= karta.cenaM)
                     && (karta.cenaZ == 0 || hrac2.pocetZelKamenu + hrac2.pocetZelKaret >= karta.cenaZ)) {
 
-                int a = 0;
-                int b = 0;
-                int c = 0;
-                int d = 0;
-                int e = 0;
+                int a;
+                int b;
+                int c;
+                int d;
+                int e;
 
                 a = karta.cenaB - hrac2.pocetBilKaret;
                 b = karta.cenaC - hrac2.pocetCerKaret;
