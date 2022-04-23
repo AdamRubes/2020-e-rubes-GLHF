@@ -59,7 +59,7 @@ public class Lobby1Controller implements Initializable {
 
     @FXML
     void stisknutoHraTriHracu(ActionEvent event) throws IOException {
-        nacistFXML("Hra");
+        nacistFXML("Vyhodnoceni");
     }
     
         @FXML

@@ -17,6 +17,8 @@ public class VysledkyHry implements Serializable{
     int pocetBoduVitez;
     int pocetBoduPorazeny;
     String casHry;// cele cislo hodiny desetine minuty
+    
+    private static final long serialVersionUID = 1L;
 
     public VysledkyHry(String vitez, String porazeny, int pocetBoduVitez, int pocetBoduPorazeny, String casHry) {
         this.vitez = vitez;
@@ -27,7 +29,12 @@ public class VysledkyHry implements Serializable{
     }
 
 
-
+    @Override
+    public String toString(){
+        
+        String s = "Vitez " + vitez + ", porazeny " + porazeny + ", pocet bodů vitěz " + pocetBoduVitez + ", pocet bodů porazeny " + pocetBoduPorazeny + ", cas hry " + casHry ;
+        return s;
+    }
     
     
 }

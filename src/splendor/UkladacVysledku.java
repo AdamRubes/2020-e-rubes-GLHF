@@ -12,52 +12,87 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Adam
  */
-public class UkladacVysledku {
-    
+public class UkladacVysledku implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     public String připravSoubor() throws IOException {
         int i = 1;
-        File file = new File("src/Hry/Hra" + i +".txt");
-        while(file.exists()){// přidat do ifu direktori
+        File file = new File("src/Hry/Hra" + i + ".txt");
+        while (file.exists()) {// přidat do ifu direktori
             i++;
-            file = new File("src/Hry/Hra" + i +".txt");
+            file = new File("src/Hry/Hra" + i + ".txt");
         }
         file.createNewFile();
         return file.getPath();
-        
+
     }
-    
+
     public void ulozHru(String path, VysledkyHry vysledky) throws FileNotFoundException, IOException {
         File file = new File(path);
         FileOutputStream f = new FileOutputStream(file);//https://mkyong.com/java/how-to-read-and-write-java-object-to-a-file/
         ObjectOutputStream o = new ObjectOutputStream(f);
         o.writeObject(vysledky);
+        o.close();
+        f.close();
     }
-    
+
     public VysledkyHry[] nactiVysledky() throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream f = null;
+        ObjectInputStream o = null;
         int i = 1;
-        VysledkyHry[] poleVysledku = null;
-        File file = new File("src/Hry/Hra" + i +".txt");
-        FileInputStream f = new FileInputStream(file);
-        ObjectInputStream o = new ObjectInputStream(f);
-        
-        while(file.exists()){
-            poleVysledku[i] = (VysledkyHry) o.readObject();
-            i++;
-            file = new File("src/Hry/Hra" + i +".txt");
+        int x = 1;
+        VysledkyHry c;
+        File fi = new File("src/Hry/Hra" + x + ".txt");
+        while (fi.exists()) {
+            x++;
+            fi = new File("src/Hry/Hra" + x + ".txt");
+
         }
+        System.out.println(x - 1);
+
+        VysledkyHry[] poleVysledku = new VysledkyHry[10];
+        System.out.println("a");
+        File file = new File("src/Hry/Hra" + i + ".txt");
+        System.out.println("b");
+        //f = new FileInputStream(file);
+        System.out.println("c");
+        // o = new ObjectInputStream(f);
+        System.out.println("d");
+        
+        while (file.exists()) {
+            System.out.println("e");
+            
+            f = new FileInputStream(file);
+            o = new ObjectInputStream(f);
+            
+            c = (VysledkyHry) o.readObject();
+            
+            o.close();
+            f.close();
+            
+            System.out.println("H");
+            
+            poleVysledku[i] = c;
+            
+            i++;
+            file = new File("src/Hry/Hra" + i + ".txt");
+            System.out.println("f");
+        }
+        System.out.println("g");
         return poleVysledku;
+
     }
-    
 
     public UkladacVysledku() {//konstruktor
     }
-    
-    
-    
-    
+
 }

@@ -14,7 +14,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.ScaleTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -404,6 +403,7 @@ public class HraController implements Initializable {
 
     @FXML
     private Text textPoleHrac2;
+    
     @FXML
     private Text textPoleHrac1;
 
@@ -528,14 +528,7 @@ public class HraController implements Initializable {
         karta7 = g.najdiNovouKartu1();
         karta8 = g.najdiNovouKartu1();
         karta9 = g.najdiNovouKartu1();
-        /*
-        System.out.println(karta1.barva);
-        System.out.println(karta2.barva);
-        System.out.println(karta3.barva);
-
-        System.out.println(karta4.barva);
-        System.out.println(karta5.barva);
-        System.out.println(karta6.barva);*/
+     
     }
 
     public void nactiPuvodniSlechtice() {

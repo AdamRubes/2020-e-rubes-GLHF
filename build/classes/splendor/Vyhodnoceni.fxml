@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.VyhodnoceniController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="splendor.VyhodnoceniController">
+   <children>
+      <ImageView fx:id="obrazekVyhral" fitHeight="276.0" fitWidth="613.0" layoutX="654.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pics/Obrazky/napis.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="obrazekHrac" fitHeight="189.0" fitWidth="415.0" layoutX="753.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>
