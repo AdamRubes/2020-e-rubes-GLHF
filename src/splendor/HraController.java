@@ -43,6 +43,9 @@ public class HraController implements Initializable {
     Karta karta7;
     Karta karta8;
     Karta karta9;
+    Karta karta10;
+    Karta karta11;
+    Karta karta12;
 
     Slechtic slechtic1;
     Slechtic slechtic2;
@@ -101,6 +104,15 @@ public class HraController implements Initializable {
 
     @FXML
     private ImageView poleKarty9;
+
+    @FXML
+    private ImageView poleKarty10;
+
+    @FXML
+    private ImageView poleKarty11;
+
+    @FXML
+    private ImageView poleKarty12;
 
     @FXML
     private Button tlacitkoDocasne;
@@ -403,7 +415,7 @@ public class HraController implements Initializable {
 
     @FXML
     private Text textPoleHrac2;
-    
+
     @FXML
     private Text textPoleHrac1;
 
@@ -520,15 +532,17 @@ public class HraController implements Initializable {
         karta1 = g.najdiNovouKartu3();
         karta2 = g.najdiNovouKartu3();
         karta3 = g.najdiNovouKartu3();
+        karta10 = g.najdiNovouKartu3();
 
         karta4 = g.najdiNovouKartu2();
         karta5 = g.najdiNovouKartu2();
         karta6 = g.najdiNovouKartu2();
+        karta11 = g.najdiNovouKartu2();
 
         karta7 = g.najdiNovouKartu1();
         karta8 = g.najdiNovouKartu1();
         karta9 = g.najdiNovouKartu1();
-     
+        karta12 = g.najdiNovouKartu1();
     }
 
     public void nactiPuvodniSlechtice() {
@@ -560,6 +574,11 @@ public class HraController implements Initializable {
                 System.out.println(karta3.barva);
                 poleKarty3.setImage(new Image(karta3.obrazek));
                 break;
+            case (10):
+                karta10 = g.najdiNovouKartu3();
+                System.out.println(karta10.barva);
+                poleKarty10.setImage(new Image(karta10.obrazek));
+                break;
             case (4):
                 karta4 = g.najdiNovouKartu2();
                 System.out.println(karta4.barva);
@@ -575,6 +594,11 @@ public class HraController implements Initializable {
                 System.out.println(karta6.barva);
                 poleKarty6.setImage(new Image(karta6.obrazek));
                 break;
+            case (11):
+                karta11 = g.najdiNovouKartu2();
+                System.out.println(karta11.barva);
+                poleKarty11.setImage(new Image(karta11.obrazek));
+                break;
             case (7):
                 karta7 = g.najdiNovouKartu1();
                 System.out.println(karta7.barva);
@@ -589,6 +613,11 @@ public class HraController implements Initializable {
                 karta9 = g.najdiNovouKartu1();
                 System.out.println(karta9.barva);
                 poleKarty9.setImage(new Image(karta9.obrazek));
+                break;
+            case (12):
+                karta12 = g.najdiNovouKartu1();
+                System.out.println(karta12.barva);
+                poleKarty12.setImage(new Image(karta12.obrazek));
                 break;
         }
     }
@@ -625,10 +654,17 @@ public class HraController implements Initializable {
 
         poleKarty9.setImage(new Image(karta9.obrazek));
 
+        poleKarty10.setImage(new Image(karta10.obrazek));
+
+        poleKarty11.setImage(new Image(karta11.obrazek));
+
+        poleKarty12.setImage(new Image(karta12.obrazek));
+
     }
 
     void animaceDotekuKarty(Node node) {
         node.toFront();
+
         //node.setOpacity(0.9);
         ScaleTransition scale = new ScaleTransition();
         scale.setNode(node);
@@ -747,6 +783,21 @@ public class HraController implements Initializable {
     }
 
     @FXML
+    void poleKarty10Klik(MouseEvent event) {
+        kliknutiNakup(karta10, 10);
+    }
+
+    @FXML
+    void poleKarty11Klik(MouseEvent event) {
+        kliknutiNakup(karta11, 11);
+    }
+
+    @FXML
+    void poleKarty12Klik(MouseEvent event) {
+        kliknutiNakup(karta12, 12);
+    }
+
+    @FXML
     void poleSlechtic1Klik(MouseEvent event) {
         System.out.println("nákup slechtice 1");
         nakupSlechtice(slechtic1, poleSlechtic1);
@@ -771,14 +822,14 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "bila");
             System.out.println("h1 po nakupu");
-            if (hrac1.tretiVzatyKamen != null) {
+            if (hrac1.tretiVzatyKamen != null || (hrac1.prvniVzatyKamen == hrac1.druhyVzatyKamen)) {
                 hrac2JeNaTahu();
             }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "bila");
             System.out.println("h2 po nakupu");
-            if (hrac2.tretiVzatyKamen != null) {
+            if (hrac2.tretiVzatyKamen != null || (hrac2.prvniVzatyKamen == hrac2.druhyVzatyKamen)) {
                 hrac1JeNaTahu();
             }
 
@@ -792,14 +843,14 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "modra");
             System.out.println("h1 po nakupu");
-            if (hrac1.tretiVzatyKamen != null) {
+            if (hrac1.tretiVzatyKamen != null || (hrac1.prvniVzatyKamen == hrac1.druhyVzatyKamen)) {
                 hrac2JeNaTahu();
             }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "modra");
             System.out.println("h2 po nakupu");
-            if (hrac2.tretiVzatyKamen != null) {
+            if (hrac2.tretiVzatyKamen != null || (hrac2.prvniVzatyKamen == hrac2.druhyVzatyKamen)) {
                 hrac1JeNaTahu();
             }
         }
@@ -812,14 +863,14 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "cervena");
             System.out.println("h1 po nakupu");
-            if (hrac1.tretiVzatyKamen != null) {
+            if (hrac1.tretiVzatyKamen != null || (hrac1.prvniVzatyKamen == hrac1.druhyVzatyKamen)) {
                 hrac2JeNaTahu();
             }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "cervena");
             System.out.println("h2 po nakupu");
-            if (hrac2.tretiVzatyKamen != null) {
+            if (hrac2.tretiVzatyKamen != null || (hrac2.prvniVzatyKamen == hrac2.druhyVzatyKamen)) {
                 hrac1JeNaTahu();
             }
         }
@@ -832,14 +883,14 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "zelena");
             System.out.println("h1 po nakupu");
-            if (hrac1.tretiVzatyKamen != null) {
+            if (hrac1.tretiVzatyKamen != null || (hrac1.prvniVzatyKamen == hrac1.druhyVzatyKamen)) {
                 hrac2JeNaTahu();
             }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "zelena");
             System.out.println("h2 po nakupu");
-            if (hrac2.tretiVzatyKamen != null) {
+            if (hrac2.tretiVzatyKamen != null || (hrac2.prvniVzatyKamen == hrac2.druhyVzatyKamen)) {
                 hrac1JeNaTahu();
             }
         }
@@ -852,14 +903,14 @@ public class HraController implements Initializable {
             System.out.println("h1 pred nakupem");
             nakupKamenu(hrac1, "hneda");
             System.out.println("h1 po nakupu");
-            if (hrac1.tretiVzatyKamen != null) {
+            if (hrac1.tretiVzatyKamen != null || (hrac1.prvniVzatyKamen == hrac1.druhyVzatyKamen)) {
                 hrac2JeNaTahu();
             }
         } else if (hrac2.jeNaTahu == true) {
             System.out.println("h2 pred nakupem");
             nakupKamenu(hrac2, "hneda");
             System.out.println("h2 po nakupu");
-            if (hrac2.tretiVzatyKamen != null) {
+            if (hrac2.tretiVzatyKamen != null || (hrac2.prvniVzatyKamen == hrac2.druhyVzatyKamen)) {
                 hrac1JeNaTahu();
             }
         }
@@ -867,9 +918,9 @@ public class HraController implements Initializable {
 
     @FXML
     void ukoncitTah() {// nejspíš redundantní -------------- odstranit
-        
+
         hrac1.pocetBodu += 15;
-       /* if (hrac1.jeNaTahu == true) {
+        /* if (hrac1.jeNaTahu == true) {
             hrac2JeNaTahu();
         } else if (hrac2.jeNaTahu == true) {
             hrac1JeNaTahu();
@@ -1002,6 +1053,7 @@ public class HraController implements Initializable {
 
                     }
                 } else {
+                    
                     System.out.println("můžeš vzít jen 2 kameny stejné barvy");
                 }
             } else {
@@ -1014,21 +1066,13 @@ public class HraController implements Initializable {
 
         }
         aktualizaceKamenu();
-        /*
-        System.out.println(hrac.pocetBilKamenu + "bil");
-        System.out.println(hrac.pocetHneKamenu + "hne");
-        System.out.println(hrac.pocetCerKamenu + "cer");
-        System.out.println(hrac.pocetZelKamenu + "Zel");
-        System.out.println(hrac.pocetModKamenu + "mod");
-         */
-
         System.out.println(hrac.prvniVzatyKamen);
         System.out.println(hrac.druhyVzatyKamen);
         System.out.println(hrac.tretiVzatyKamen);
     }
 
     void hrac1JeNaTahu() {
-        
+
         aktualizaceBodu();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
@@ -1140,7 +1184,7 @@ public class HraController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         hrac1 = new Hrac("Hrac1", true);
-        hrac2 = new Hrac("Hrac 2", false);
+        hrac2 = new Hrac("Hrac2", false);
         ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
 
@@ -2211,6 +2255,36 @@ public class HraController implements Initializable {
     }
 
     ////// ANIMACE -->
+    @FXML
+    void poleKarty10Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleKarty10);
+    }
+
+    @FXML
+    void poleKarty10Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty10);
+    }
+
+    @FXML
+    void poleKarty11Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleKarty11);
+    }
+
+    @FXML
+    void poleKarty11Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty11);
+    }
+
+    @FXML
+    void poleKarty12Vstup(MouseEvent event) {
+        animaceDotekuKarty(poleKarty12);
+    }
+
+    @FXML
+    void poleKarty12Vystup(MouseEvent event) {
+        animaceOupusteniKarty(poleKarty12);
+    }
+
     @FXML
     void poleKarty1Vstup(MouseEvent event) {
         animaceDotekuKarty(poleKarty1);

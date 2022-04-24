@@ -5,7 +5,6 @@
  */
 package splendor;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -29,9 +28,13 @@ import javafx.scene.media.MediaView;
  */
 public class Lobby1Controller implements Initializable {
 
+    MediaPlayer mp;
+
+    Media me;
+
     @FXML
     private AnchorPane AnchorPaneLobby1;
-    
+
     @FXML
     private GridPane GridPane;
 
@@ -45,10 +48,8 @@ public class Lobby1Controller implements Initializable {
     private Button tlacitkoHraTriHracu;
 
     @FXML
-    private Button tlacitkoHraPoSiti;
-        
-        
-    
+    private Button tlacitkoHistorieHer;
+
     @FXML
     private MediaView pozadiVideo;
 
@@ -58,23 +59,22 @@ public class Lobby1Controller implements Initializable {
     }
 
     @FXML
-    void stisknutoHraTriHracu(ActionEvent event) throws IOException {
+    void stisknutoHraTriHracu(ActionEvent event) throws IOException  {
         nacistFXML("Vyhodnoceni");
     }
-    
-        @FXML
-    void stisknutoHraPoSiti(ActionEvent event) throws IOException {
-        
- 
+
+    @FXML
+    void stisknutoHistorieHer(ActionEvent event) throws IOException  {
+    nacistFXML("HistorieHer");
+
     }
-    
+
     //metoda pro načítání FXML
-    void nacistFXML(String nazev) throws IOException{   //https://www.youtube.com/watch?v=RJOza3XQk34
-      AnchorPane pane = FXMLLoader.load(getClass().getResource(nazev + ".fxml"));
-      AnchorPaneLobby1.getChildren().setAll(pane);
+    void nacistFXML(String nazev) throws IOException {   //https://www.youtube.com/watch?v=RJOza3XQk34
+        AnchorPane pane = FXMLLoader.load(getClass().getResource(nazev + ".fxml"));
+        AnchorPaneLobby1.getChildren().setAll(pane);
     }
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         File file = new File("src\\Pics\\backgroundvideo.mp4"); //http://tutorials.jenkov.com/javafx/media.html
@@ -83,6 +83,17 @@ public class Lobby1Controller implements Initializable {
         pozadiVideo.setMediaPlayer(player);
         player.setVolume(0);
         player.play();
-    }    
-    
+
+        File file2 = new File("src\\Hudba\\Marked+-+320bit.mp3");//https://www.serpentsoundstudios.com/royalty-free-music/celtic-fantasy
+
+//          Music: Marked by Alexander Nakarada (www.serpentsoundstudios.com)
+//          Licensed under Creative Commons BY Attribution 4.0 License
+//          http://creativecommons.org/licenses/by/4.0/
+        me = new Media(file2.toURI().toString());
+        mp = new MediaPlayer(me);
+        mp.setCycleCount(MediaPlayer.INDEFINITE);
+        mp.play();
+        
+    }
+
 }

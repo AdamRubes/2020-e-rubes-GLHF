@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -66,19 +67,6 @@
                   <ImageView fx:id="h1c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h1c16Vstup" onMouseExited="#h1c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h1c17Vstup" onMouseExited="#h1c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="415.0" layoutY="611.0" onMouseEntered="#h1SlechticVstup" onMouseExited="#h1SlechticVystup" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <ImageView fx:id="poleKarty1" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="14.0" onMouseEntered="#poleKarty1Vstup" onMouseExited="#poleKarty1Vystup" onMousePressed="#poleKarty1Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty2" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="14.0" nodeOrientation="INHERIT" onMouseEntered="#poleKarty2Vstup" onMouseExited="#poleKarty2Vystup" onMousePressed="#poleKarty2Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty3" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="14.0" onMouseEntered="#poleKarty3Vstup" onMouseExited="#poleKarty3Vystup" onMousePressed="#poleKarty3Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty4" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="285.0" onMouseEntered="#poleKarty4Vstup" onMouseExited="#poleKarty4Vystup" onMousePressed="#poleKarty4Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty5" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="285.0" onMouseEntered="#poleKarty5Vstup" onMouseExited="#poleKarty5Vystup" onMousePressed="#poleKarty5Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty6" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="285.0" onMouseEntered="#poleKarty6Vstup" onMouseExited="#poleKarty6Vystup" onMousePressed="#poleKarty6Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty7" fitHeight="260.0" fitWidth="205.0" layoutX="10.0" layoutY="555.0" onMouseEntered="#poleKarty7Vstup" onMouseExited="#poleKarty7Vystup" onMousePressed="#poleKarty7Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty8" fitHeight="260.0" fitWidth="205.0" layoutX="227.0" layoutY="555.0" onMouseEntered="#poleKarty8Vstup" onMouseExited="#poleKarty8Vystup" onMousePressed="#poleKarty8Klik" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="poleKarty9" fitHeight="260.0" fitWidth="205.0" layoutX="440.0" layoutY="555.0" onMouseEntered="#poleKarty9Vstup" onMouseExited="#poleKarty9Vystup" onMousePressed="#poleKarty9Klik" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="816.0" prefWidth="660.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -267,6 +255,70 @@
                      </font>
                   </Text>
                </children></AnchorPane>
+            <AnchorPane prefHeight="820.0" prefWidth="658.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="poleKarty1" fitHeight="200.0" fitWidth="180.0" layoutX="12.0" layoutY="14.0" onMouseEntered="#poleKarty1Vstup" onMouseExited="#poleKarty1Vystup" onMousePressed="#poleKarty1Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/bil2-5.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty2" fitHeight="200.0" fitWidth="180.0" layoutX="177.0" layoutY="14.0" nodeOrientation="INHERIT" onMouseEntered="#poleKarty2Vstup" onMouseExited="#poleKarty2Vystup" onMousePressed="#poleKarty2Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/bil1-3.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty3" fitHeight="200.0" fitWidth="180.0" layoutX="340.0" layoutY="14.0" onMouseEntered="#poleKarty3Vstup" onMouseExited="#poleKarty3Vystup" onMousePressed="#poleKarty3Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/bil1-1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty4" fitHeight="200.0" fitWidth="180.0" layoutX="11.0" layoutY="235.0" onMouseEntered="#poleKarty4Vstup" onMouseExited="#poleKarty4Vystup" onMousePressed="#poleKarty4Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/cer1-2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty5" fitHeight="200.0" fitWidth="180.0" layoutX="177.0" layoutY="235.0" onMouseEntered="#poleKarty5Vstup" onMouseExited="#poleKarty5Vystup" onMousePressed="#poleKarty5Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/mod1-1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty6" fitHeight="200.0" fitWidth="180.0" layoutX="342.0" layoutY="235.0" onMouseEntered="#poleKarty6Vstup" onMouseExited="#poleKarty6Vystup" onMousePressed="#poleKarty6Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/mod2-6.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty7" fitHeight="200.0" fitWidth="180.0" layoutX="14.0" layoutY="463.0" onMouseEntered="#poleKarty7Vstup" onMouseExited="#poleKarty7Vystup" onMousePressed="#poleKarty7Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/mod2-6.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty8" fitHeight="200.0" fitWidth="180.0" layoutX="177.0" layoutY="463.0" onMouseEntered="#poleKarty8Vstup" onMouseExited="#poleKarty8Vystup" onMousePressed="#poleKarty8Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/bil2-3.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty9" fitHeight="200.0" fitWidth="180.0" layoutX="342.0" layoutY="463.0" onMouseEntered="#poleKarty9Vstup" onMouseExited="#poleKarty9Vystup" onMousePressed="#poleKarty9Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/zel3-1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty10" fitHeight="200.0" fitWidth="180.0" layoutX="502.0" layoutY="14.0" onMouseEntered="#poleKarty10Vstup" onMouseExited="#poleKarty10Vystup" onMousePressed="#poleKarty10Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/bil1-1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty11" fitHeight="200.0" fitWidth="180.0" layoutX="504.0" layoutY="235.0" onMouseEntered="#poleKarty11Vstup" onMouseExited="#poleKarty11Vystup" onMousePressed="#poleKarty11Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/mod2-6.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="poleKarty12" fitHeight="200.0" fitWidth="180.0" layoutX="504.0" layoutY="463.0" onMouseEntered="#poleKarty12Vstup" onMouseExited="#poleKarty12Vystup" onMousePressed="#poleKarty12Klik" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pics/Karty/zel3-1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </GridPane>
    </children>

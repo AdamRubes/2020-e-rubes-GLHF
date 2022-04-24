@@ -60,16 +60,14 @@ public class UkladacVysledku implements Serializable {
         System.out.println(x - 1);
 
         VysledkyHry[] poleVysledku = new VysledkyHry[10];
-        System.out.println("a");
+        
         File file = new File("src/Hry/Hra" + i + ".txt");
-        System.out.println("b");
-        //f = new FileInputStream(file);
-        System.out.println("c");
-        // o = new ObjectInputStream(f);
-        System.out.println("d");
+        
+        
+        
         
         while (file.exists()) {
-            System.out.println("e");
+            
             
             f = new FileInputStream(file);
             o = new ObjectInputStream(f);
@@ -79,15 +77,15 @@ public class UkladacVysledku implements Serializable {
             o.close();
             f.close();
             
-            System.out.println("H");
+           
             
             poleVysledku[i] = c;
             
             i++;
             file = new File("src/Hry/Hra" + i + ".txt");
-            System.out.println("f");
+            
         }
-        System.out.println("g");
+        
         return poleVysledku;
 
     }
