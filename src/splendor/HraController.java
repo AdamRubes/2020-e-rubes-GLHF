@@ -916,16 +916,6 @@ public class HraController implements Initializable {
         }
     }
 
-    @FXML
-    void ukoncitTah() {// nejspíš redundantní -------------- odstranit
-
-        hrac1.pocetBodu += 15;
-        /* if (hrac1.jeNaTahu == true) {
-            hrac2JeNaTahu();
-        } else if (hrac2.jeNaTahu == true) {
-            hrac1JeNaTahu();
-        }*/
-    }
 
     void nakupKamenu(Hrac hrac, String barva) {
         if (hrac.jeNaTahu == true) {
@@ -1167,11 +1157,15 @@ public class HraController implements Initializable {
         if (hrac1.muzeSlechtice == false && hrac2.muzeSlechtice == false) {
             System.out.println("pred nakupem");
 
-            nakupKarty(karta);
+            if(nakupKarty(karta)){
+                nactiKartu(cisloKarty);
+            }else{
+                System.out.println("selhal nákup");
+            }
 
             System.out.println("po nakupu");
 
-            nactiKartu(cisloKarty);
+            
         } else {
             if (hrac1.jeNaTahu == true && hrac1.maSlechtice == false) {
                 System.out.println("muzes vzit slechtice");
@@ -1183,6 +1177,7 @@ public class HraController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         hrac1 = new Hrac("Hrac1", true);
         hrac2 = new Hrac("Hrac2", false);
         ukladac = new UkladacVysledku();
@@ -1197,7 +1192,7 @@ public class HraController implements Initializable {
 
     }
 
-    public void nakupKarty(Karta karta) {
+    public boolean nakupKarty(Karta karta) {
         if (hrac1.jeNaTahu == true) {
             System.out.println("hrac 1 na tahu");
             if ((karta.cenaB == 0 || hrac1.pocetBilKamenu + hrac1.pocetBilKaret >= karta.cenaB)
@@ -1714,14 +1709,18 @@ public class HraController implements Initializable {
                         animaceDotekuKarty(poleSlechtic2);
                         hrac1.muzeSlechtice = true;
                     }
+                    
+                    
 
                 } else {// nemá na šlechtice
                     //System.out.println("hráč2 je na tahu");
+                    
                     hrac2JeNaTahu();
                 }
-
+                return true;
             } else {
                 System.out.println("nemá dost penez");
+                return false;
             }
 
         } else if (hrac2.jeNaTahu == true) {
@@ -2240,18 +2239,20 @@ public class HraController implements Initializable {
                         animaceDotekuKarty(poleSlechtic2);
                         hrac2.muzeSlechtice = true;
                     }
-
+                    
                 } else {
                     //System.out.println("hráč1 je na tahu");
                     hrac1JeNaTahu();
                 }
-
+                return true;
             } else {
                 System.out.println("nemá dost penez");
+                return false;
             }
 
         }
-
+        System.out.println("----------------------------------------------------------------");
+        return false;
     }
 
     ////// ANIMACE -->

@@ -54,6 +54,17 @@ public class VyhodnoceniController implements Initializable {
     @FXML
     private Label h2PocetBoduLabel;
     
+    @FXML
+    private Button tlacitkoHistorie;
+
+    
+    
+    
+    @FXML
+    void stiskTlacitkoHistorie(ActionEvent event) throws IOException {
+        nacistFXML("HistorieHer");
+    }
+    
 
     @FXML
     void stiskTlacitkoNavrat(ActionEvent event) throws IOException {

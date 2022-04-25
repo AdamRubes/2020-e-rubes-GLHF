@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPaneVyhodnoceni" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.VyhodnoceniController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneVyhodnoceni" prefHeight="1080.0" prefWidth="1920.0" styleClass="AnchorPaneHra" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.VyhodnoceniController">
    <children>
       <ImageView fx:id="obrazekVyhral" fitHeight="276.0" fitWidth="613.0" layoutX="654.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,15 +26,16 @@
             <Image url="@../Pics/Obrazky/hrac2.png" />
          </image>
       </ImageView>
-      <Label fx:id="h1PocetBoduLabel" layoutX="712.0" layoutY="836.0" prefHeight="17.0" prefWidth="70.0" text="Label" textAlignment="CENTER">
+      <Label fx:id="h1PocetBoduLabel" layoutX="712.0" layoutY="836.0" prefHeight="17.0" prefWidth="70.0" text="Label" textAlignment="CENTER" textFill="#fffb00">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="h2PocetBoduLabel" layoutX="1130.0" layoutY="836.0" prefHeight="17.0" prefWidth="76.0" text="Label" textAlignment="CENTER">
+      <Label fx:id="h2PocetBoduLabel" layoutX="1130.0" layoutY="836.0" prefHeight="17.0" prefWidth="76.0" text="Label" textAlignment="CENTER" textFill="#fffb00">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
+      <Button fx:id="tlacitkoHistorie" layoutX="315.0" layoutY="913.0" mnemonicParsing="false" onAction="#stiskTlacitkoHistorie" prefHeight="60.0" prefWidth="167.0" text="Historie her" />
    </children>
 </AnchorPane>

@@ -60,32 +60,26 @@ public class UkladacVysledku implements Serializable {
         System.out.println(x - 1);
 
         VysledkyHry[] poleVysledku = new VysledkyHry[10];
-        
+
         File file = new File("src/Hry/Hra" + i + ".txt");
-        
-        
-        
-        
+
         while (file.exists()) {
-            
-            
+
             f = new FileInputStream(file);
             o = new ObjectInputStream(f);
-            
+
             c = (VysledkyHry) o.readObject();
-            
+
             o.close();
             f.close();
-            
-           
-            
+
             poleVysledku[i] = c;
-            
+
             i++;
             file = new File("src/Hry/Hra" + i + ".txt");
-            
+
         }
-        
+
         return poleVysledku;
 
     }

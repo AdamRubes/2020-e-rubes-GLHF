@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPaneHra" prefHeight="1080.0" prefWidth="1942.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.HraController">
+<AnchorPane id="AnchorPaneHra" fx:id="AnchorPaneHra" prefHeight="1080.0" prefWidth="1942.0" styleClass="AnchorPaneHra" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.HraController">
    <children>
       <GridPane layoutY="-23.0" prefHeight="1102.0" prefWidth="1920.0">
         <columnConstraints>
@@ -204,7 +203,6 @@
                         <Font size="56.0" />
                      </font>
                   </Text>
-                  <Button layoutX="222.0" layoutY="50.0" mnemonicParsing="false" onAction="#ukoncitTah" prefHeight="25.0" prefWidth="100.0" text="Ukončit Tah" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
