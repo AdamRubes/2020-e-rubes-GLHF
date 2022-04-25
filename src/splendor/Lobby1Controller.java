@@ -45,7 +45,7 @@ public class Lobby1Controller implements Initializable {
     private Button tlacitkoHraDvouHRacu;
 
     @FXML
-    private Button tlacitkoHraTriHracu;
+    private Button tlacitkoZobrazitPravidla;
 
     @FXML
     private Button tlacitkoHistorieHer;
@@ -59,7 +59,7 @@ public class Lobby1Controller implements Initializable {
     }
 
     @FXML
-    void stisknutoHraTriHracu(ActionEvent event) throws IOException  {
+    void stisknutoPravidla(ActionEvent event) throws IOException  {
         nacistFXML("Vyhodnoceni");
     }
 

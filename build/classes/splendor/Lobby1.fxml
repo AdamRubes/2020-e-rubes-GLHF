@@ -34,7 +34,7 @@
                <children>
                   <Button fx:id="tlacitkoHraDvouHRacu" mnemonicParsing="false" onAction="#stisknutoHraDvouHracu" prefHeight="66.0" prefWidth="166.0" text="Hra dvou hráčů" />
                   <HBox prefHeight="360.0" prefWidth="54.0" />
-                  <Button fx:id="tlacitkoHraTriHracu" mnemonicParsing="false" onAction="#stisknutoHraTriHracu" prefHeight="67.0" prefWidth="152.0" text="Hra tří Hráčů" />
+                  <Button fx:id="tlacitkoZobrazitPravidla" mnemonicParsing="false" onAction="#stisknutoPravidla" prefHeight="67.0" prefWidth="152.0" text="Zobraazit pravidla" />
                   <HBox prefHeight="360.0" prefWidth="56.0" />
                   <Button fx:id="tlacitkoHistorieHer" mnemonicParsing="false" onAction="#stisknutoHistorieHer" prefHeight="74.0" prefWidth="166.0" text="Historie Her" />
                </children>
