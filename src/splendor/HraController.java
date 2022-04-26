@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -33,7 +34,9 @@ import javafx.util.Duration;
  *
  * @author Adam
  */
-public class HraController implements Initializable {
+public class HraController implements Initializable {// https://www.photohdx.com/images/2015/07/blue-soft-fabric-cloth-texture-background.jpg obrazek pozadi
+    //https://img.freepik.com/free-photo/blue-fabric-texture_23-2147729331.jpg
+    //<a href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
 
     Karta karta1;
     Karta karta2;
@@ -667,6 +670,76 @@ public class HraController implements Initializable {
         poleKarty12.setImage(new Image(karta12.obrazek));
 
     }
+    
+    public void zkontrolujDostupnost(){
+        zkontrolujDostupnostKarty(karta1, poleKarty1);
+        zkontrolujDostupnostKarty(karta2, poleKarty2);
+        zkontrolujDostupnostKarty(karta3, poleKarty3);
+        zkontrolujDostupnostKarty(karta4, poleKarty4);
+        zkontrolujDostupnostKarty(karta5, poleKarty5);
+        zkontrolujDostupnostKarty(karta6, poleKarty6);
+        zkontrolujDostupnostKarty(karta7, poleKarty7);
+        zkontrolujDostupnostKarty(karta8, poleKarty8);
+        zkontrolujDostupnostKarty(karta9, poleKarty9);
+        zkontrolujDostupnostKarty(karta10, poleKarty10);
+        zkontrolujDostupnostKarty(karta11, poleKarty11);
+        zkontrolujDostupnostKarty(karta12, poleKarty12);
+    }
+
+    public void zkontrolujDostupnostKarty(Karta karta, Node node) {
+        if ((       karta.cenaB == 0 || hrac1.pocetBilKamenu + hrac1.pocetBilKaret >= karta.cenaB)
+                && (karta.cenaC == 0 || hrac1.pocetCerKamenu + hrac1.pocetCerKaret >= karta.cenaC)
+                && (karta.cenaH == 0 || hrac1.pocetHneKamenu + hrac1.pocetHneKaret >= karta.cenaH)
+                && (karta.cenaM == 0 || hrac1.pocetModKamenu + hrac1.pocetModKaret >= karta.cenaM)
+                && (karta.cenaZ == 0 || hrac1.pocetZelKamenu + hrac1.pocetZelKaret >= karta.cenaZ)
+                && (hrac1.jeNaTahu)) {
+                    zvyrazneni(node);
+        }
+        else if ((  karta.cenaB == 0 || hrac2.pocetBilKamenu + hrac2.pocetBilKaret >= karta.cenaB)
+                && (karta.cenaC == 0 || hrac2.pocetCerKamenu + hrac2.pocetCerKaret >= karta.cenaC)
+                && (karta.cenaH == 0 || hrac2.pocetHneKamenu + hrac2.pocetHneKaret >= karta.cenaH)
+                && (karta.cenaM == 0 || hrac2.pocetModKamenu + hrac2.pocetModKaret >= karta.cenaM)
+                && (karta.cenaZ == 0 || hrac2.pocetZelKamenu + hrac2.pocetZelKaret >= karta.cenaZ)
+                && (hrac2.jeNaTahu)) {
+                    zvyrazneni(node);
+        }
+        
+        
+    }
+    
+    
+    
+    
+    public void vypnoutZari(){
+        vypnoutZvyrazneni(poleKarty1);
+        vypnoutZvyrazneni(poleKarty2);
+        vypnoutZvyrazneni(poleKarty3);
+        vypnoutZvyrazneni(poleKarty4);
+        vypnoutZvyrazneni(poleKarty5);
+        vypnoutZvyrazneni(poleKarty6);
+        vypnoutZvyrazneni(poleKarty7);
+        vypnoutZvyrazneni(poleKarty8);
+        vypnoutZvyrazneni(poleKarty9);
+        vypnoutZvyrazneni(poleKarty10);
+        vypnoutZvyrazneni(poleKarty11);
+        vypnoutZvyrazneni(poleKarty12);
+    }
+
+    void zvyrazneni(Node node) {
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.RED);
+        borderGlow.setWidth(100);
+        borderGlow.setHeight(100);
+
+        node.setEffect(borderGlow);
+        
+    }
+    
+    void vypnoutZvyrazneni(Node node){
+        node.setEffect(null);
+    }
 
     void animaceDotekuKarty(Node node) {
         node.toFront();
@@ -1142,6 +1215,7 @@ public class HraController implements Initializable {
         aktualizaceBodu();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
+        vypnoutZari();
         textPoleHrac1.setFill(Color.GREEN);
         textPoleHrac2.setFill(Color.RED);
         System.out.println("hrac 1 je na tahu");
@@ -1151,6 +1225,7 @@ public class HraController implements Initializable {
         hrac2.prvniVzatyKamen = null;
         hrac2.druhyVzatyKamen = null;
         hrac2.tretiVzatyKamen = null;
+        zkontrolujDostupnost();
     }
 
     void hrac2JeNaTahu() {
@@ -1158,6 +1233,7 @@ public class HraController implements Initializable {
         aktualizaceBodu();
         hrac1.jeNaTahu = false;
         hrac2.jeNaTahu = true;
+        vypnoutZari();
         textPoleHrac1.setFill(Color.RED);
         textPoleHrac2.setFill(Color.GREEN);
         System.out.println("hrac 2 je na tahu");
@@ -1167,6 +1243,7 @@ public class HraController implements Initializable {
         hrac2.prvniVzatyKamen = null;
         hrac2.druhyVzatyKamen = null;
         hrac2.tretiVzatyKamen = null;
+        zkontrolujDostupnost();
     }
 
     void nakupSlechtice(Slechtic slechtic, ImageView puvodniLokaceSlechtice) { // node, je to pole (poleSlechtic3)
@@ -1187,6 +1264,7 @@ public class HraController implements Initializable {
 
                 hrac1.maSlechtice = true;
                 hrac1.muzeSlechtice = false;
+                vypnoutZvyrazneni(puvodniLokaceSlechtice);
                 puvodniLokaceSlechtice.setImage(null);
                 puvodniLokaceSlechtice.setMouseTransparent(true);
 
@@ -1212,7 +1290,7 @@ public class HraController implements Initializable {
                 h2Slechtic.setImage(new Image(slechtic.obrazek));
                 hrac2.maSlechtice = true;
                 hrac2.muzeSlechtice = false;
-
+                vypnoutZvyrazneni(puvodniLokaceSlechtice);
                 puvodniLokaceSlechtice.setImage(null);
                 puvodniLokaceSlechtice.setMouseTransparent(true);
 
@@ -1258,7 +1336,7 @@ public class HraController implements Initializable {
         hrac2 = new Hrac("Hrac2", false);
         ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
-
+        zvyrazneni(poleKarty1);
         textPoleHrac1.setFill(Color.GREEN);
         textPoleHrac2.setFill(Color.RED);
         g.generuj();
@@ -1761,6 +1839,7 @@ public class HraController implements Initializable {
                             && slechtic1.zabranej == false) {
                         System.out.println("můžeš vzít šlechtice 1");
                         animaceDotekuKarty(poleSlechtic1);
+                        zvyrazneni(poleSlechtic1);
                         hrac1.muzeSlechtice = true;
                     }
                     if (hrac1.pocetBilKaret >= slechtic3.cenaB
@@ -1771,6 +1850,7 @@ public class HraController implements Initializable {
                             && slechtic3.zabranej == false) {
                         System.out.println("můžeš vzít šlechtice 3");
                         animaceDotekuKarty(poleSlechtic3);
+                        zvyrazneni(poleSlechtic3);
                         hrac1.muzeSlechtice = true;
 
                     }
@@ -1783,6 +1863,7 @@ public class HraController implements Initializable {
                             && slechtic2.zabranej == false) {
                         System.out.println("můžeš vzít šlechtice 2");
                         animaceDotekuKarty(poleSlechtic2);
+                        zvyrazneni(poleSlechtic2);
                         hrac1.muzeSlechtice = true;
                     }
 
@@ -2288,9 +2369,10 @@ public class HraController implements Initializable {
                             && hrac2.pocetModKaret >= slechtic1.cenaM
                             && hrac2.pocetZelKaret >= slechtic1.cenaZ)
                             && (slechtic1.zabranej == false)) {
+                        zvyrazneni(poleSlechtic1);
                         System.out.println("můžeš vzít šlechtice 1");
                         animaceDotekuKarty(poleSlechtic1);
-                        hrac2.muzeSlechtice = true;;
+                        hrac2.muzeSlechtice = true;
                     }
                     if ((hrac2.pocetBilKaret >= slechtic3.cenaB
                             && hrac2.pocetCerKaret >= slechtic3.cenaC
@@ -2298,6 +2380,7 @@ public class HraController implements Initializable {
                             && hrac2.pocetModKaret >= slechtic3.cenaM
                             && hrac2.pocetZelKaret >= slechtic3.cenaZ)
                             && (slechtic3.zabranej == false)) {
+                        zvyrazneni(poleSlechtic3);
                         System.out.println("můžeš vzít šlechtice 3");
                         animaceDotekuKarty(poleSlechtic3);
                         hrac2.muzeSlechtice = true;
@@ -2309,6 +2392,7 @@ public class HraController implements Initializable {
                             && hrac2.pocetModKaret >= slechtic2.cenaM
                             && hrac2.pocetZelKaret >= slechtic2.cenaZ)
                             && (slechtic2.zabranej == false)) {
+                        zvyrazneni(poleSlechtic2);
                         System.out.println("můžeš vzít šlechtice 2");
                         animaceDotekuKarty(poleSlechtic2);
                         hrac2.muzeSlechtice = true;

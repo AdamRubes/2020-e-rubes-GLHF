@@ -10,4 +10,5 @@ and open the template in the editor.
 
 .AnchorPaneHra{
   -fx-background-image: url(pozadi1.jpg);
+  -fx-background-size: cover;
 }
