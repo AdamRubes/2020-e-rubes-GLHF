@@ -384,14 +384,9 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @FXML
     private ImageView h2c17;
 
-    @FXML
-    private ImageView poleKamenZolik;
 
-    @FXML
-    private ImageView poleKamenZolik1;
 
-    @FXML
-    private ImageView poleKamenZolik2;
+
 
     @FXML
     private ImageView poleKamenBil;
@@ -495,14 +490,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @FXML
     private Text textPocetBil2;
 
-    @FXML
-    private Text textPocetZol;
 
-    @FXML
-    private Text textPocetZol1;
-
-    @FXML
-    private Text textPocetZol2;
 
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
@@ -538,28 +526,28 @@ public class HraController implements Initializable {// https://www.photohdx.com
         poleKamenBil.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer.setImage(new Image("Pics/Kameny/cer.png"));
-        poleKamenZolik.setImage(new Image("Pics/Kameny/zla.png"));
+        
         poleKamenZel.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne.setImage(new Image("Pics/Kameny/hne.png"));
 
         poleKamenBil1.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod1.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer1.setImage(new Image("Pics/Kameny/cer.png"));
-        poleKamenZolik1.setImage(new Image("Pics/Kameny/zla.png"));
+        
         poleKamenZel1.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne1.setImage(new Image("Pics/Kameny/hne.png"));
 
         poleKamenBil2.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod2.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer2.setImage(new Image("Pics/Kameny/cer.png"));
-        poleKamenZolik2.setImage(new Image("Pics/Kameny/zla.png"));
+        
         poleKamenZel2.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne2.setImage(new Image("Pics/Kameny/hne.png"));
 
         textPocetBil.setText("4");
         textPocetMod.setText("4");
         textPocetCer.setText("4");
-        textPocetZol.setText("4");
+        
         textPocetZel.setText("4");
         textPocetHne.setText("4");
     }
@@ -857,21 +845,21 @@ public class HraController implements Initializable {// https://www.photohdx.com
         textPocetZel1.setText(Integer.toString(hrac1.pocetZelKamenu));
         textPocetMod1.setText(Integer.toString(hrac1.pocetModKamenu));
         textPocetHne1.setText(Integer.toString(hrac1.pocetHneKamenu));
-        textPocetZol1.setText(Integer.toString(hrac1.pocetZoliku));
+        
 
         textPocetBil2.setText(Integer.toString(hrac2.pocetBilKamenu));
         textPocetCer2.setText(Integer.toString(hrac2.pocetCerKamenu));
         textPocetZel2.setText(Integer.toString(hrac2.pocetZelKamenu));
         textPocetMod2.setText(Integer.toString(hrac2.pocetModKamenu));
         textPocetHne2.setText(Integer.toString(hrac2.pocetHneKamenu));
-        textPocetZol2.setText(Integer.toString(hrac2.pocetZoliku));
+        
 
         textPocetBil.setText(Integer.toString(bankCentralni.pocetBilKamenu));
         textPocetCer.setText(Integer.toString(bankCentralni.pocetCerKamenu));
         textPocetZel.setText(Integer.toString(bankCentralni.pocetZelKamenu));
         textPocetMod.setText(Integer.toString(bankCentralni.pocetModKamenu));
         textPocetHne.setText(Integer.toString(bankCentralni.pocetHneKamenu));
-        textPocetZol.setText(Integer.toString(bankCentralni.pocetZoliku));
+        
 
     }
 
