@@ -67,10 +67,8 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
     Hrac hrac1;
     Hrac hrac2;
-    
+
     Nicky nick;
-    
-    
 
     String nickHrac1;
     String nickHrac2;
@@ -384,10 +382,6 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @FXML
     private ImageView h2c17;
 
-
-
-
-
     @FXML
     private ImageView poleKamenBil;
 
@@ -490,8 +484,6 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @FXML
     private Text textPocetBil2;
 
-
-
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
 
@@ -508,11 +500,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
         mediaPlayer.play();
     }
 
-    /*String ssound = "sound.mp3";
-        Media sound = new Media(ssound);
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
-     */
+   
     void kresli() {
         nactiPuvodniKarty();
         nactiPuvodniSlechtice();
@@ -526,28 +514,26 @@ public class HraController implements Initializable {// https://www.photohdx.com
         poleKamenBil.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer.setImage(new Image("Pics/Kameny/cer.png"));
-        
+
         poleKamenZel.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne.setImage(new Image("Pics/Kameny/hne.png"));
 
         poleKamenBil1.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod1.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer1.setImage(new Image("Pics/Kameny/cer.png"));
-        
         poleKamenZel1.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne1.setImage(new Image("Pics/Kameny/hne.png"));
 
         poleKamenBil2.setImage(new Image("Pics/Kameny/bil.png"));
         poleKamenMod2.setImage(new Image("Pics/Kameny/mod.png"));
         poleKamenCer2.setImage(new Image("Pics/Kameny/cer.png"));
-        
         poleKamenZel2.setImage(new Image("Pics/Kameny/zeleny.png"));
         poleKamenHne2.setImage(new Image("Pics/Kameny/hne.png"));
 
         textPocetBil.setText("4");
         textPocetMod.setText("4");
         textPocetCer.setText("4");
-        
+
         textPocetZel.setText("4");
         textPocetHne.setText("4");
     }
@@ -845,21 +831,18 @@ public class HraController implements Initializable {// https://www.photohdx.com
         textPocetZel1.setText(Integer.toString(hrac1.pocetZelKamenu));
         textPocetMod1.setText(Integer.toString(hrac1.pocetModKamenu));
         textPocetHne1.setText(Integer.toString(hrac1.pocetHneKamenu));
-        
 
         textPocetBil2.setText(Integer.toString(hrac2.pocetBilKamenu));
         textPocetCer2.setText(Integer.toString(hrac2.pocetCerKamenu));
         textPocetZel2.setText(Integer.toString(hrac2.pocetZelKamenu));
         textPocetMod2.setText(Integer.toString(hrac2.pocetModKamenu));
         textPocetHne2.setText(Integer.toString(hrac2.pocetHneKamenu));
-        
 
         textPocetBil.setText(Integer.toString(bankCentralni.pocetBilKamenu));
         textPocetCer.setText(Integer.toString(bankCentralni.pocetCerKamenu));
         textPocetZel.setText(Integer.toString(bankCentralni.pocetZelKamenu));
         textPocetMod.setText(Integer.toString(bankCentralni.pocetModKamenu));
         textPocetHne.setText(Integer.toString(bankCentralni.pocetHneKamenu));
-        
 
     }
 
@@ -1391,18 +1374,17 @@ public class HraController implements Initializable {// https://www.photohdx.com
         vypnoutZari();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
-        
+
         textPoleHrac1.setStyle("-fx-background-color: #009933");//zelena
         textPoleHrac2.setStyle("-fx-background-color: #ff0000");
-        
+
         zvyrazneni(textPoleHrac2);
         zvyrazniZelene(textPoleHrac1);
-        
-        
-/*
+
+        /*
         textPoleHrac1.setTextFill(Color.GREEN);
         textPoleHrac2.setTextFill(Color.RED);
-        */
+         */
         System.out.println("hrac 1 je na tahu");
         hrac1.prvniVzatyKamen = null;
         hrac1.druhyVzatyKamen = null;
@@ -1420,21 +1402,17 @@ public class HraController implements Initializable {// https://www.photohdx.com
         vypnoutZari();
         hrac1.jeNaTahu = false;
         hrac2.jeNaTahu = true;
-        
-        
+
         textPoleHrac1.setStyle("-fx-background-color: #ff0000");
         textPoleHrac2.setStyle("-fx-background-color: #009933");//zelena
-        
+
         zvyrazneni(textPoleHrac1);
         zvyrazniZelene(textPoleHrac2);
 
-        
         /*
         textPoleHrac1.setTextFill(Color.RED);
         textPoleHrac2.setTextFill(Color.GREEN);
-        */
-        
-        
+         */
         System.out.println("hrac 2 je na tahu");
         hrac1.prvniVzatyKamen = null;
         hrac1.druhyVzatyKamen = null;
@@ -1536,42 +1514,33 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        
         UkladacNicku ukl = new UkladacNicku();
-        
+
         try {
-           nick =  ukl.nactiNicky("src/Hry/nicky.txt");
+            nick = ukl.nactiNicky("src/Hry/nicky.txt");
         } catch (IOException ex) {
             Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         System.out.println(nick.nickHrac1);
         System.out.println(nick.nickHrac2);
-        
-        if(nick.nickHrac1.length() > 0){
+
+        if (nick.nickHrac1.length() > 0) {
             hrac1 = new Hrac(nick.nickHrac1, true);
-        }else{
+        } else {
             hrac1 = new Hrac("Hrac1", true);
         }
-        
-        if(nick.nickHrac2.length() > 0){
-             hrac2 = new Hrac(nick.nickHrac2, false);
-        }else{
+
+        if (nick.nickHrac2.length() > 0) {
+            hrac2 = new Hrac(nick.nickHrac2, false);
+        } else {
             hrac2 = new Hrac("Hrac2", false);
         }
-        
-        
 
-        
-
-        
-        
         textPoleHrac1.setText(hrac1.id);
         textPoleHrac2.setText(hrac2.id);
-
-        
 
         ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
@@ -1581,14 +1550,9 @@ public class HraController implements Initializable {// https://www.photohdx.com
         kresli();
 
         //System.out.println(ukladac.připravSoubor());
-        
-        
         hrac1JeNaTahu();
         tah = 1;
-        
-                
-        
-        
+
     }
 
     public boolean nakupKarty(Karta karta) {
