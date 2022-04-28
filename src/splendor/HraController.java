@@ -20,11 +20,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -37,6 +40,9 @@ import javafx.util.Duration;
 public class HraController implements Initializable {// https://www.photohdx.com/images/2015/07/blue-soft-fabric-cloth-texture-background.jpg obrazek pozadi
     //https://img.freepik.com/free-photo/blue-fabric-texture_23-2147729331.jpg
     //<a href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
+    //https://notification-sounds.com/1433-card-flip-sound-effect.html zvuk karty
+    // https://img.freepik.com/free-photo/abstract-blue-paper-texture-background_61607-1095.jpg  pozadi
+    //<a href='https://www.freepik.com/vectors/white-abstract'>White abstract vector created by freepik - www.freepik.com</a>
 
     Karta karta1;
     Karta karta2;
@@ -61,10 +67,23 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
     Hrac hrac1;
     Hrac hrac2;
+    
+    Nicky nick;
+    
+    
+
+    String nickHrac1;
+    String nickHrac2;
 
     BankKamenu bankCentralni;
 
     boolean muzeSlechtice = false;
+
+    @FXML
+    private AnchorPane anchorPaneHrac1;
+
+    @FXML
+    private AnchorPane anchorPaneHrac2;
 
     @FXML
     private ImageView h2Slechtic;
@@ -420,10 +439,10 @@ public class HraController implements Initializable {// https://www.photohdx.com
     private ImageView poleKamenHne2;
 
     @FXML
-    private Text textPoleHrac2;
+    private Label textPoleHrac2;
 
     @FXML
-    private Text textPoleHrac1;
+    private Label textPoleHrac1;
 
     @FXML
     private Text textBodyH2;
@@ -488,6 +507,24 @@ public class HraController implements Initializable {// https://www.photohdx.com
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
 
+    //File file2 = new File("src\\Hudba\\Marked+-+320bit.mp3");
+    File file = new File("src\\splendor\\sound.mp3");
+    String path = "/src/splendor/sound.mp3"; // https://stackoverflow.com/questions/23202272/how-to-play-sounds-with-javafx
+    Media sound;
+    MediaPlayer mediaPlayer;
+
+    void prehratZvukKarty() {
+
+        sound = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+    }
+
+    /*String ssound = "sound.mp3";
+        Media sound = new Media(ssound);
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+     */
     void kresli() {
         nactiPuvodniKarty();
         nactiPuvodniSlechtice();
@@ -629,7 +666,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
     }
 
     public void konecHry(Hrac vitez, Hrac porazeny) throws IOException {
-        System.out.println("zacatek konec hry");
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String s = dtf.format(now);
@@ -638,7 +675,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
         VysledkyHry vysledky = new VysledkyHry(vitez.id, porazeny.id, vitez.pocetBodu, porazeny.pocetBodu, s);
         String path = ukladac.připravSoubor();
         ukladac.ulozHru(path, vysledky);
-        System.out.println("h");
+
         nacistFXML("Vyhodnoceni");
         System.out.println("konec");
     }
@@ -694,6 +731,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                 && (karta.cenaZ == 0 || hrac1.pocetZelKamenu + hrac1.pocetZelKaret >= karta.cenaZ)
                 && (hrac1.jeNaTahu)) {
             zvyrazneni(node);
+            System.out.println("rozsvěcím" + node.getId());
         } else if ((karta.cenaB == 0 || hrac2.pocetBilKamenu + hrac2.pocetBilKaret >= karta.cenaB)
                 && (karta.cenaC == 0 || hrac2.pocetCerKamenu + hrac2.pocetCerKaret >= karta.cenaC)
                 && (karta.cenaH == 0 || hrac2.pocetHneKamenu + hrac2.pocetHneKaret >= karta.cenaH)
@@ -701,6 +739,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                 && (karta.cenaZ == 0 || hrac2.pocetZelKamenu + hrac2.pocetZelKaret >= karta.cenaZ)
                 && (hrac2.jeNaTahu)) {
             zvyrazneni(node);
+            System.out.println("rozsvěcím" + node.getId());
         }
 
     }
@@ -730,6 +769,17 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
         node.setEffect(borderGlow);
 
+    }
+
+    void zvyrazniZelene(Node node) {
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.GREEN);
+        borderGlow.setWidth(100);
+        borderGlow.setHeight(100);
+
+        node.setEffect(borderGlow);
     }
 
     void vypnoutZvyrazneni(Node node) {
@@ -1349,11 +1399,22 @@ public class HraController implements Initializable {// https://www.photohdx.com
     void hrac1JeNaTahu() {
         tah++;
         aktualizaceBodu();
+        System.out.println("vypnout zaři");
+        vypnoutZari();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
-        vypnoutZari();
-        textPoleHrac1.setFill(Color.GREEN);
-        textPoleHrac2.setFill(Color.RED);
+        
+        textPoleHrac1.setStyle("-fx-background-color: #009933");//zelena
+        textPoleHrac2.setStyle("-fx-background-color: #ff0000");
+        
+        zvyrazneni(textPoleHrac2);
+        zvyrazniZelene(textPoleHrac1);
+        
+        
+/*
+        textPoleHrac1.setTextFill(Color.GREEN);
+        textPoleHrac2.setTextFill(Color.RED);
+        */
         System.out.println("hrac 1 je na tahu");
         hrac1.prvniVzatyKamen = null;
         hrac1.druhyVzatyKamen = null;
@@ -1366,12 +1427,26 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
     void hrac2JeNaTahu() {
         tah++;
+        System.out.println("vypnout zaři");
         aktualizaceBodu();
+        vypnoutZari();
         hrac1.jeNaTahu = false;
         hrac2.jeNaTahu = true;
-        vypnoutZari();
-        textPoleHrac1.setFill(Color.RED);
-        textPoleHrac2.setFill(Color.GREEN);
+        
+        
+        textPoleHrac1.setStyle("-fx-background-color: #ff0000");
+        textPoleHrac2.setStyle("-fx-background-color: #009933");//zelena
+        
+        zvyrazneni(textPoleHrac1);
+        zvyrazniZelene(textPoleHrac2);
+
+        
+        /*
+        textPoleHrac1.setTextFill(Color.RED);
+        textPoleHrac2.setTextFill(Color.GREEN);
+        */
+        
+        
         System.out.println("hrac 2 je na tahu");
         hrac1.prvniVzatyKamen = null;
         hrac1.druhyVzatyKamen = null;
@@ -1449,7 +1524,12 @@ public class HraController implements Initializable {// https://www.photohdx.com
             System.out.println("pred nakupem");
 
             if (nakupKarty(karta)) {
+                prehratZvukKarty();
                 nactiKartu(cisloKarty);
+
+                vypnoutZari();
+                zkontrolujDostupnost();
+
             } else {
                 System.out.println("selhal nákup");
             }
@@ -1468,18 +1548,59 @@ public class HraController implements Initializable {// https://www.photohdx.com
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        hrac1 = new Hrac("Hrac1", true);
-        hrac2 = new Hrac("Hrac2", false);
+        
+        UkladacNicku ukl = new UkladacNicku();
+        
+        try {
+           nick =  ukl.nactiNicky("src/Hry/nicky.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HraController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println(nick.nickHrac1);
+        System.out.println(nick.nickHrac2);
+        
+        if(nick.nickHrac1.length() > 0){
+            hrac1 = new Hrac(nick.nickHrac1, true);
+        }else{
+            hrac1 = new Hrac("Hrac1", true);
+        }
+        
+        if(nick.nickHrac2.length() > 0){
+             hrac2 = new Hrac(nick.nickHrac2, false);
+        }else{
+            hrac2 = new Hrac("Hrac2", false);
+        }
+        
+        
+
+        
+
+        
+        
+        textPoleHrac1.setText(hrac1.id);
+        textPoleHrac2.setText(hrac2.id);
+
+        
+
         ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
-        zvyrazneni(poleKarty1);
-        textPoleHrac1.setFill(Color.GREEN);
-        textPoleHrac2.setFill(Color.RED);
+
         g.generuj();
         f.generujSlechtice();
         kresli();
-        //System.out.println(ukladac.připravSoubor());
 
+        //System.out.println(ukladac.připravSoubor());
+        
+        
+        hrac1JeNaTahu();
+        tah = 1;
+        
+                
+        
+        
     }
 
     public boolean nakupKarty(Karta karta) {

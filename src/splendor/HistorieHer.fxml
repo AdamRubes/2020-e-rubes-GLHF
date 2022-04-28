@@ -12,7 +12,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="label2" alignment="CENTER" layoutX="260.0" layoutY="150.0" prefHeight="72.0" prefWidth="1400.0" text="Label" textAlignment="CENTER" textFill="#fffb00">
+      <Label fx:id="label2" alignment="CENTER" layoutX="260.0" layoutY="150.0" prefHeight="72.0" prefWidth="1400.0" stylesheets="@StyleSheet.css" text="Label" textAlignment="CENTER" textFill="#fffb00">
          <font>
             <Font size="30.0" />
          </font>
@@ -52,6 +52,15 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="874.0" layoutY="971.0" mnemonicParsing="false" onAction="#stisknutoNavrat" prefHeight="49.0" prefWidth="173.0" text="Návrat do hlavní nabídky" />
+      <Button layoutX="863.0" layoutY="970.0" mnemonicParsing="false" onAction="#stisknutoNavrat" prefHeight="49.0" prefWidth="194.0" text="Návrat do hlavní nabídky" />
+      <Button layoutX="1689.0" layoutY="74.0" mnemonicParsing="false" onAction="#stisknutoSmazat1" prefHeight="41.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="174.0" mnemonicParsing="false" onAction="#stisknutoSmazat2" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="274.0" mnemonicParsing="false" onAction="#stisknutoSmazat3" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="374.0" mnemonicParsing="false" onAction="#stisknutoSmazat4" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="474.0" mnemonicParsing="false" onAction="#stisknutoSmazat5" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="574.0" mnemonicParsing="false" onAction="#stisknutoSmazat6" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="674.0" mnemonicParsing="false" onAction="#stisknutoSmazat7" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="774.0" mnemonicParsing="false" onAction="#stisknutoSmazat8" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
+      <Button layoutX="1689.0" layoutY="874.0" mnemonicParsing="false" onAction="#stisknutoSmazat9" prefHeight="25.0" prefWidth="146.0" text="Smazat záznam" />
    </children>
 </AnchorPane>

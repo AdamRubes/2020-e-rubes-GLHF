@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -35,6 +33,22 @@ public class UkladacVysledku implements Serializable {
         return file.getPath();
 
     }
+    
+    public boolean jeVolnySlot(){
+        int i = 1;
+        File file = new File("src/Hry/Hra" + i + ".txt");
+        while (file.exists()) {// přidat do ifu direktori
+            i++;
+            file = new File("src/Hry/Hra" + i + ".txt");
+        }
+        
+        if(i >= 10){
+            return false;
+        }else{
+           return true; 
+        }
+        
+    }
 
     public void ulozHru(String path, VysledkyHry vysledky) throws FileNotFoundException, IOException {
         File file = new File(path);
@@ -46,18 +60,12 @@ public class UkladacVysledku implements Serializable {
     }
 
     public VysledkyHry[] nactiVysledky() throws FileNotFoundException, IOException, ClassNotFoundException {
-        FileInputStream f = null;
-        ObjectInputStream o = null;
+        FileInputStream f;
+        ObjectInputStream o;
+        
         int i = 1;
-        int x = 1;
+       
         VysledkyHry c;
-        File fi = new File("src/Hry/Hra" + x + ".txt");
-        while (fi.exists()) {
-            x++;
-            fi = new File("src/Hry/Hra" + x + ".txt");
-
-        }
-        System.out.println(x - 1);
 
         VysledkyHry[] poleVysledku = new VysledkyHry[10];
 
@@ -77,14 +85,39 @@ public class UkladacVysledku implements Serializable {
 
             i++;
             file = new File("src/Hry/Hra" + i + ".txt");
-
+            System.out.println(file.getAbsolutePath());
+            
+            while(file.exists() == false && i <=9){
+                System.out.println("file neexistuje hledam novy");
+                i++;
+                file = new File("src/Hry/Hra" + i + ".txt");
+                System.out.println("novy file");
+                System.out.println(file.getAbsolutePath());
+            }
+            System.out.println(file.getAbsolutePath());
+            System.out.println("konec while");
         }
 
         return poleVysledku;
 
     }
+    
+    
+    
+    
+    String smazSoubor(String path){
+        File file = new File(path); 
+        if(file.delete()){
+            return "Uspěšně smazáno";
+        }else {
+            return "Došlo k chybě";
+        }
+
+    }
 
     public UkladacVysledku() {//konstruktor
     }
+    
+    
 
 }

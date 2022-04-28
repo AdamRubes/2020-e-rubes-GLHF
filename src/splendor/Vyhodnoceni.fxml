@@ -14,18 +14,7 @@
             <Image url="@../Pics/Obrazky/napis.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="obrazekHrac" fitHeight="189.0" fitWidth="415.0" layoutX="753.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="tlacitkoNavrat" layoutX="79.0" layoutY="915.0" mnemonicParsing="false" onAction="#stiskTlacitkoNavrat" prefHeight="60.0" prefWidth="167.0" text="Návrat do úvodní nabídky" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="653.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Pics/Obrazky/hrac1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1068.0" layoutY="716.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Pics/Obrazky/hrac2.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="tlacitkoNavrat" layoutX="79.0" layoutY="915.0" mnemonicParsing="false" onAction="#stiskTlacitkoNavrat" prefHeight="60.0" prefWidth="200.0" text="Návrat do úvodní nabídky" />
       <Label fx:id="h1PocetBoduLabel" layoutX="712.0" layoutY="836.0" prefHeight="17.0" prefWidth="70.0" text="Label" textAlignment="CENTER" textFill="#fffb00">
          <font>
             <Font size="30.0" />
@@ -37,5 +26,20 @@
          </font>
       </Label>
       <Button fx:id="tlacitkoHistorie" layoutX="315.0" layoutY="913.0" mnemonicParsing="false" onAction="#stiskTlacitkoHistorie" prefHeight="60.0" prefWidth="167.0" text="Historie her" />
+      <Label fx:id="labelH1" alignment="CENTER" layoutX="595.0" layoutY="763.0" prefHeight="60.0" prefWidth="305.0" text="Hrač1" textAlignment="CENTER">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelH2" alignment="CENTER" layoutX="1016.0" layoutY="763.0" prefHeight="60.0" prefWidth="305.0" text="Hrač2" textAlignment="CENTER">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelVitez" alignment="CENTER" layoutX="370.0" layoutY="360.0" prefHeight="141.0" prefWidth="1181.0" stylesheets="@StyleSheet.css" text="Label">
+         <font>
+            <Font size="80.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

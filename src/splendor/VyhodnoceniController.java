@@ -15,11 +15,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -42,8 +45,7 @@ public class VyhodnoceniController implements Initializable {
     @FXML
     private Button tlacitkoNavrat;
 
-    @FXML
-    private ImageView obrazekHrac;
+    
 
     @FXML
     private ImageView obrazekVyhral;
@@ -56,6 +58,16 @@ public class VyhodnoceniController implements Initializable {
     
     @FXML
     private Button tlacitkoHistorie;
+    
+    
+        @FXML
+    private Label labelH1;
+
+    @FXML
+    private Label labelH2;
+
+    @FXML
+    private Label labelVitez;
 
     
     
@@ -92,27 +104,58 @@ public class VyhodnoceniController implements Initializable {
         }
         System.out.println(posledniHra.toString());
     }
+    
+    
+        void zvyrazniZlute(Node node) {
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.YELLOW);
+        borderGlow.setWidth(100);
+        borderGlow.setHeight(100);
+
+        node.setEffect(borderGlow);
+    }
+        
+        void zvyrazneni(Node node) {
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setOffsetY(0f);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setColor(Color.RED);
+        borderGlow.setWidth(100);
+        borderGlow.setHeight(100);
+
+        node.setEffect(borderGlow);
+
+    }
 
     public void vykresliViteze() {
 
-        if (posledniHra.vitez.equals("Hrac1")) {
-
-            Image image = new Image("Pics/Obrazky/hrac1.png");
-            obrazekHrac.setImage(image);
             String x = Integer.toString(posledniHra.pocetBoduVitez);
             String y = Integer.toString(posledniHra.pocetBoduPorazeny);
+
+            
+            labelVitez.setText(posledniHra.vitez);
+            labelH1.setText(posledniHra.vitez);
+            labelH2.setText(posledniHra.porazeny);
+            
+            zvyrazniZlute(labelVitez);
+            zvyrazniZlute(labelH1);
+            zvyrazneni(labelH2);
+                    
             h1PocetBoduLabel.setText(x + ".b");
             h2PocetBoduLabel.setText(y + ".b");
+        
+            
+            
+            
+            
+           
 
-        } else if (posledniHra.vitez.equals("Hrac2")) {
+       
 
-            Image image = new Image("Pics/Obrazky/hrac2.png");
-            obrazekHrac.setImage(image);
-            String x = Integer.toString(posledniHra.pocetBoduVitez);
-            String y = Integer.toString(posledniHra.pocetBoduPorazeny);
-            h2PocetBoduLabel.setText(x + ".b");
-            h1PocetBoduLabel.setText(y + ".b");
-        }
+
+        
         
         
 

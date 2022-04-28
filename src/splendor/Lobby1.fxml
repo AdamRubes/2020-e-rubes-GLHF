@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPaneLobby1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.Lobby1Controller">
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneLobby1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1080.0" prefWidth="1920.0" styleClass="AnchorPaneLobby1" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splendor.Lobby1Controller">
    <children>
       <MediaView fx:id="pozadiVideo" fitHeight="1080.0" fitWidth="1920.0" mouseTransparent="true" />
       <GridPane fx:id="GridPane" prefHeight="1080.0" prefWidth="1920.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="604.0" minWidth="10.0" prefWidth="600.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1320.0" minWidth="10.0" prefWidth="720.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="710.0" minWidth="0.0" prefWidth="600.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="780.0" minWidth="10.0" prefWidth="780.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1387.0" minWidth="10.0" prefWidth="1056.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="710.0" minWidth="0.0" prefWidth="84.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -25,20 +26,25 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="LogoHry" fitHeight="360.0" fitWidth="722.0" pickOnBounds="true" GridPane.columnIndex="1">
-               <image>
-                  <Image url="@../Pics/Logo.png" />
-               </image>
-            </ImageView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <HBox alignment="CENTER" prefHeight="360.0" prefWidth="1053.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="tlacitkoHraDvouHRacu" mnemonicParsing="false" onAction="#stisknutoHraDvouHracu" prefHeight="66.0" prefWidth="166.0" text="Hra dvou hráčů" />
-                  <HBox prefHeight="360.0" prefWidth="54.0" />
-                  <Button fx:id="tlacitkoZobrazitPravidla" mnemonicParsing="false" onAction="#stisknutoPravidla" prefHeight="67.0" prefWidth="152.0" text="Zobraazit pravidla" />
-                  <HBox prefHeight="360.0" prefWidth="56.0" />
-                  <Button fx:id="tlacitkoHistorieHer" mnemonicParsing="false" onAction="#stisknutoHistorieHer" prefHeight="74.0" prefWidth="166.0" text="Historie Her" />
+                  <AnchorPane prefHeight="360.0" prefWidth="1055.0">
+                     <children>
+                        <Button fx:id="tlacitkoHraDvouHRacu" layoutX="122.0" layoutY="147.0" mnemonicParsing="false" onAction="#stisknutoHraDvouHracu" prefHeight="66.0" prefWidth="166.0" text="Hra dvou hráčů" />
+                        <Button fx:id="tlacitkoZobrazitPravidla" layoutX="632.0" layoutY="147.0" mnemonicParsing="false" onAction="#stisknutoPravidla" prefHeight="67.0" prefWidth="164.0" text="Zobrazit pravidla" />
+                        <Button fx:id="tlacitkoHistorieHer" layoutX="827.0" layoutY="147.0" mnemonicParsing="false" onAction="#stisknutoHistorieHer" prefHeight="67.0" prefWidth="166.0" text="Historie Her" />
+                        <TextField fx:id="poleText1" layoutX="48.0" layoutY="252.0" promptText="Nick Hrac 1" />
+                        <TextField fx:id="poleText2" layoutX="214.0" layoutY="252.0" promptText="Nick Hrac 2" />
+                        <Label fx:id="labelEror" alignment="CENTER" layoutX="39.0" layoutY="105.0" prefHeight="34.0" prefWidth="328.0" text="Label" visible="false">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>

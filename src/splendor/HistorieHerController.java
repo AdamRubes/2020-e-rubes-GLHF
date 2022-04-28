@@ -145,6 +145,53 @@ public class HistorieHerController implements Initializable {
     void stisknutoNavrat(ActionEvent event) throws IOException {
         nacistFXML("Lobby1");
     }
+    
+    @FXML
+    void stisknutoSmazat1(ActionEvent event) {
+        label1.setText(u.smazSoubor("src/Hry/Hra1.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat2(ActionEvent event) {
+        label2.setText(u.smazSoubor("src/Hry/Hra2.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat3(ActionEvent event) {
+        label3.setText(u.smazSoubor("src/Hry/Hra3.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat4(ActionEvent event) {
+        label4.setText(u.smazSoubor("src/Hry/Hra4.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat5(ActionEvent event) {
+        label5.setText(u.smazSoubor("src/Hry/Hra5.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat6(ActionEvent event) {
+        label6.setText(u.smazSoubor("src/Hry/Hra6.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat7(ActionEvent event) {
+        label7.setText(u.smazSoubor("src/Hry/Hra7.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat8(ActionEvent event) {
+        label8.setText(u.smazSoubor("src/Hry/Hra8.txt"));
+    }
+
+    @FXML
+    void stisknutoSmazat9(ActionEvent event) {
+        label9.setText(u.smazSoubor("src/Hry/Hra9.txt"));
+    }
+
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
