@@ -11,7 +11,7 @@ and open the template in the editor.
 
 
 .AnchorPaneHra{
-  -fx-background-image: url(pozadi8.jpg);
+  -fx-background-image: url(pozadi8.jpg); //<a href='https://www.freepik.com/vectors/white-abstract'>White abstract vector created by freepik - www.freepik.com</a>
   -fx-background-size: stretch;
 }
 
@@ -58,4 +58,16 @@ and open the template in the editor.
     
     -fx-font-family: Gabriola; 
     -fx-text-fill: #ff0000;
+}
+
+#textPoleHrac1  {
+    
+    -fx-font-family: Gabriola; 
+    -fx-text-fill: #ffffff;
+}
+
+#textPoleHrac2 {
+    
+    -fx-font-family: Gabriola; 
+    -fx-text-fill: #ffffff;
 }

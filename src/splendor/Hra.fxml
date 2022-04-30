@@ -193,7 +193,7 @@
                         <Font size="56.0" />
                      </font>
                   </Text>
-                  <Button layoutX="290.0" layoutY="215.0" mnemonicParsing="false" onAction="#asd" prefHeight="48.0" prefWidth="48.0" text="s" />
+                  <Button layoutX="290.0" layoutY="215.0" mnemonicParsing="false" mouseTransparent="true" onAction="#asd" prefHeight="48.0" prefWidth="48.0" text="s" visible="false" />
                </children></AnchorPane>
             <AnchorPane fx:id="anchorPaneHrac1" prefHeight="200.0" prefWidth="200.0" stylesheets="@stylPozadiHracu.css" GridPane.rowIndex="2">
                <children>

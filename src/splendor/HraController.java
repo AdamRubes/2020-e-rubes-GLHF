@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +31,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 /**
@@ -37,12 +39,12 @@ import javafx.util.Duration;
  *
  * @author Adam
  */
-public class HraController implements Initializable {// https://www.photohdx.com/images/2015/07/blue-soft-fabric-cloth-texture-background.jpg obrazek pozadi
-    //https://img.freepik.com/free-photo/blue-fabric-texture_23-2147729331.jpg
-    //<a href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
-    //https://notification-sounds.com/1433-card-flip-sound-effect.html zvuk karty
-    // https://img.freepik.com/free-photo/abstract-blue-paper-texture-background_61607-1095.jpg  pozadi
-    //<a href='https://www.freepik.com/vectors/white-abstract'>White abstract vector created by freepik - www.freepik.com</a>
+public class HraController implements Initializable {
+    
+    
+   
+    
+    
 
     Karta karta1;
     Karta karta2;
@@ -488,14 +490,14 @@ public class HraController implements Initializable {// https://www.photohdx.com
     GeneratorSlechticu f = new GeneratorSlechticu();
 
     //File file2 = new File("src\\Hudba\\Marked+-+320bit.mp3");
-    File file = new File("src\\splendor\\sound.mp3");
+    File file = new File("src\\splendor\\sound.mp3");  //https://notification-sounds.com/1433-card-flip-sound-effect.html zvuk karty
     String path = "/src/splendor/sound.mp3"; // https://stackoverflow.com/questions/23202272/how-to-play-sounds-with-javafx
     Media sound;
     MediaPlayer mediaPlayer;
 
     void prehratZvukKarty() {
 
-        sound = new Media(file.toURI().toString());
+        sound = new Media(file.toURI().toString()); 
         mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
     }
@@ -758,6 +760,16 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
     void vypnoutZvyrazneni(Node node) {
         node.setEffect(null);
+    }
+    
+    void animaceZmenaTahu(Node node){
+        RotateTransition rotate = new RotateTransition();  
+        rotate.setAxis(Rotate.Z_AXIS);  
+        rotate.setByAngle(360);  
+        rotate.setDuration(Duration.millis(1000));
+        rotate.setNode(node);
+        rotate.play(); 
+        
     }
 
     void animaceDotekuKarty(Node node) {
@@ -1380,6 +1392,10 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
         zvyrazneni(textPoleHrac2);
         zvyrazniZelene(textPoleHrac1);
+        
+        animaceDotekuKarty(textPoleHrac1);
+        animaceZmenaTahu(textPoleHrac1);
+        
 
         /*
         textPoleHrac1.setTextFill(Color.GREEN);
@@ -1393,6 +1409,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
         hrac2.druhyVzatyKamen = null;
         hrac2.tretiVzatyKamen = null;
         zkontrolujDostupnost();
+        animaceOupusteniKarty(textPoleHrac2);
     }
 
     void hrac2JeNaTahu() {
@@ -1408,7 +1425,10 @@ public class HraController implements Initializable {// https://www.photohdx.com
 
         zvyrazneni(textPoleHrac1);
         zvyrazniZelene(textPoleHrac2);
-
+        
+        animaceDotekuKarty(textPoleHrac2);
+        animaceZmenaTahu(textPoleHrac2);
+        animaceOupusteniKarty(textPoleHrac1);
         /*
         textPoleHrac1.setTextFill(Color.RED);
         textPoleHrac2.setTextFill(Color.GREEN);
@@ -1421,6 +1441,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
         hrac2.druhyVzatyKamen = null;
         hrac2.tretiVzatyKamen = null;
         zkontrolujDostupnost();
+        
     }
 
     void nakupSlechtice(Slechtic slechtic, ImageView puvodniLokaceSlechtice) { // node, je to pole (poleSlechtic3)
@@ -2049,6 +2070,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         System.out.println("můžeš vzít šlechtice 1");
                         animaceDotekuKarty(poleSlechtic1);
                         zvyrazneni(poleSlechtic1);
+                        animaceZmenaTahu(poleSlechtic1);
                         hrac1.muzeSlechtice = true;
                     }
                     if (hrac1.pocetBilKaret >= slechtic3.cenaB
@@ -2060,6 +2082,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         System.out.println("můžeš vzít šlechtice 3");
                         animaceDotekuKarty(poleSlechtic3);
                         zvyrazneni(poleSlechtic3);
+                        animaceZmenaTahu(poleSlechtic3);
                         hrac1.muzeSlechtice = true;
 
                     }
@@ -2073,6 +2096,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         System.out.println("můžeš vzít šlechtice 2");
                         animaceDotekuKarty(poleSlechtic2);
                         zvyrazneni(poleSlechtic2);
+                        animaceZmenaTahu(poleSlechtic2);
                         hrac1.muzeSlechtice = true;
                     }
 
@@ -2581,6 +2605,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         zvyrazneni(poleSlechtic1);
                         System.out.println("můžeš vzít šlechtice 1");
                         animaceDotekuKarty(poleSlechtic1);
+                        animaceZmenaTahu(poleSlechtic1);
                         hrac2.muzeSlechtice = true;
                     }
                     if ((hrac2.pocetBilKaret >= slechtic3.cenaB
@@ -2592,6 +2617,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         zvyrazneni(poleSlechtic3);
                         System.out.println("můžeš vzít šlechtice 3");
                         animaceDotekuKarty(poleSlechtic3);
+                        animaceZmenaTahu(poleSlechtic3);
                         hrac2.muzeSlechtice = true;
                     }
 
@@ -2604,6 +2630,7 @@ public class HraController implements Initializable {// https://www.photohdx.com
                         zvyrazneni(poleSlechtic2);
                         System.out.println("můžeš vzít šlechtice 2");
                         animaceDotekuKarty(poleSlechtic2);
+                        animaceZmenaTahu(poleSlechtic2);
                         hrac2.muzeSlechtice = true;
                     }
 

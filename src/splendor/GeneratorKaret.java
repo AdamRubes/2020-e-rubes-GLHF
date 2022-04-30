@@ -35,7 +35,9 @@ public class GeneratorKaret implements Serializable {
         indexZabranychKaret3 = new Integer[20];
         indexZabranychKaret2 = new Integer[30];
         indexZabranychKaret1 = new Integer[40];
-
+        
+        //Obrázky karet jsou mnou naskenované a graficky upravené originální karty ze zakoupené hry Splendor
+        
         listKaret3.add(new Karta("zelena", 5, 0, 7, 0, 0, 3, 3, "Pics/Karty/zel3-2.jpg"));
         listKaret3.add(new Karta("zelena", 4, 3, 6, 0, 0, 3, 3, "Pics/Karty/zel3-4.jpg"));
         listKaret3.add(new Karta("zelena", 4, 0, 7, 0, 0, 0, 3, "Pics/Karty/zel3-1.jpg"));
