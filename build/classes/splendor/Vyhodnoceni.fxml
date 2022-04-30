@@ -41,5 +41,6 @@
             <Font size="120.0" />
          </font>
       </Label>
+      <ImageView fx:id="obrazekYoda" fitHeight="185.0" fitWidth="227.0" layoutX="847.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

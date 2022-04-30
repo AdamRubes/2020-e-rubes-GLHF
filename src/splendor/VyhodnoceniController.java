@@ -11,6 +11,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +25,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -45,7 +49,8 @@ public class VyhodnoceniController implements Initializable {
     @FXML
     private Button tlacitkoNavrat;
 
-    
+    @FXML
+    private ImageView obrazekYoda;
 
     @FXML
     private ImageView obrazekVyhral;
@@ -128,6 +133,17 @@ public class VyhodnoceniController implements Initializable {
         node.setEffect(borderGlow);
 
     }
+        
+        public void animaceYoda(Node node){
+        RotateTransition rotate = new RotateTransition();
+        rotate.setNode(node);
+        rotate.setDuration(Duration.millis(1500));
+        rotate.setCycleCount(RotateTransition.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setByAngle(360);
+        rotate.setAxis(Rotate.Z_AXIS);
+        rotate.play();
+        }
 
     public void vykresliViteze() {
 
@@ -163,6 +179,9 @@ public class VyhodnoceniController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        obrazekYoda.setImage(new Image("Pics/Obrazky/BabyYodaTransparent.png"));
+        animaceYoda(obrazekYoda);
+        
         u = new UkladacVysledku();
 
         try {
