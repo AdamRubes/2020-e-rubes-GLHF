@@ -68,6 +68,36 @@
                   <ImageView fx:id="h1c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h1c16Vstup" onMouseExited="#h1c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="210.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h1c17Vstup" onMouseExited="#h1c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h1Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="415.0" layoutY="611.0" onMouseEntered="#h1SlechticVstup" onMouseExited="#h1SlechticVystup" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="430.0" layoutY="416.0" prefHeight="23.0" prefWidth="144.0" style="-fx-font-weight: bold;;" text="Počet karet:" underline="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetBKaret" layoutX="430.0" layoutY="445.0" prefHeight="23.0" prefWidth="145.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetMKaret" layoutX="430.0" layoutY="476.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetHKaret" layoutX="430.0" layoutY="505.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetZKaret" layoutX="430.0" layoutY="535.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetCKaret" layoutX="430.0" layoutY="566.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="816.0" prefWidth="660.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -113,13 +143,43 @@
                   <ImageView fx:id="h2c16" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="205.0" layoutY="536.0" mouseTransparent="true" onMouseEntered="#h2c16Vstup" onMouseExited="#h2c16Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h2c17" disable="true" fitHeight="260.0" fitWidth="205.0" layoutX="205.0" layoutY="556.0" mouseTransparent="true" onMouseEntered="#h2c17Vstup" onMouseExited="#h2c17Vystup" pickOnBounds="true" preserveRatio="true" visible="false" />
                   <ImageView fx:id="h2Slechtic" fitHeight="171.0" fitWidth="200.0" layoutX="434.0" layoutY="620.0" onMouseEntered="#h2SlechticVstup" onMouseExited="#h2SlechticVystup" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="labelPocetCKaret1" layoutX="430.0" layoutY="566.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetZKaret1" layoutX="430.0" layoutY="535.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetHKaret1" layoutX="430.0" layoutY="505.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetMKaret1" layoutX="430.0" layoutY="476.0" prefHeight="23.0" prefWidth="145.0" style="-fx-font-weight: bold;;" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPocetBKaret1" layoutX="430.0" layoutY="445.0" prefHeight="23.0" prefWidth="145.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="430.0" layoutY="416.0" prefHeight="23.0" prefWidth="144.0" style="-fx-font-weight: bold;;" text="Počet karet:" underline="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="anchorPaneHrac2" prefHeight="200.0" prefWidth="200.0" stylesheets="@stylPozadiHracu.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Text fx:id="textBodyH2" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="0 b." wrappingWidth="158.13671875">
+                  <Text fx:id="textBodyH2" layoutX="6.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="0 b." wrappingWidth="272.13671875">
                      <font>
-                        <Font size="55.0" />
+                        <Font size="30.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="poleKamenBil2" fitHeight="100.0" fitWidth="100.0" layoutX="548.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
@@ -152,13 +212,13 @@
                         <Font size="56.0" />
                      </font>
                   </Text>
-                  <Label fx:id="textPoleHrac2" alignment="CENTER" layoutY="4.0" prefHeight="93.0" prefWidth="216.0" text="Hrac2">
+                  <Label fx:id="textPoleHrac2" alignment="CENTER" layoutY="3.0" prefHeight="93.0" prefWidth="216.0" text="Hráč 2">
                      <font>
                         <Font size="64.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <AnchorPane fx:id="anchorPaneBank" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <ImageView fx:id="poleSlechtic1" fitHeight="102.0" fitWidth="122.0" onMouseEntered="#slechtic1Vstup" onMouseExited="#slechtic1Vystup" onMousePressed="#poleSlechtic1Klik" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="poleSlechtic2" fitHeight="102.0" fitWidth="122.0" layoutX="38.0" onMouseEntered="#slechtic2Vstup" onMouseExited="#slechtic2Vystup" onMousePressed="#poleSlechtic2Klik" pickOnBounds="true" preserveRatio="true" />
@@ -197,9 +257,9 @@
                </children></AnchorPane>
             <AnchorPane fx:id="anchorPaneHrac1" prefHeight="200.0" prefWidth="200.0" stylesheets="@stylPozadiHracu.css" GridPane.rowIndex="2">
                <children>
-                  <Text fx:id="textBodyH1" layoutX="417.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="0 b." wrappingWidth="158.13671875">
+                  <Text fx:id="textBodyH1" layoutX="366.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="0 b." wrappingWidth="247.0000091791153">
                      <font>
-                        <Font size="48.0" />
+                        <Font size="30.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="poleKamenBil1" fitHeight="100.0" fitWidth="100.0" layoutX="215.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" />
@@ -232,13 +292,13 @@
                         <Font size="56.0" />
                      </font>
                   </Text>
-                  <Label fx:id="textPoleHrac1" alignment="CENTER" layoutX="400.0" layoutY="14.0" prefHeight="93.0" prefWidth="192.0" text="Hrac1">
+                  <Label fx:id="textPoleHrac1" alignment="CENTER" layoutX="400.0" layoutY="14.0" prefHeight="93.0" prefWidth="192.0" text="Hráč 1">
                      <font>
                         <Font size="64.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane prefHeight="820.0" prefWidth="658.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <AnchorPane fx:id="anchorPaneKarty" prefHeight="820.0" prefWidth="658.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ImageView fx:id="poleKarty1" fitHeight="200.0" fitWidth="180.0" layoutX="12.0" layoutY="14.0" onMouseEntered="#poleKarty1Vstup" onMouseExited="#poleKarty1Vystup" onMousePressed="#poleKarty1Klik" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -300,6 +360,7 @@
                         <Image url="@../Pics/Karty/zel3-1.jpg" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="obrazekYoda" fitHeight="157.0" fitWidth="235.0" layoutX="212.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </children>

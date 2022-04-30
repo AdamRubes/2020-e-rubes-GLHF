@@ -13,8 +13,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -84,6 +86,45 @@ public class HraController implements Initializable {
 
     @FXML
     private AnchorPane anchorPaneHrac2;
+    
+    
+    @FXML
+    private AnchorPane anchorPaneBank;
+    
+    @FXML
+    private AnchorPane anchorPaneKarty;
+    
+    
+    @FXML
+    private Label labelPocetBKaret;
+
+    @FXML
+    private Label labelPocetMKaret;
+
+    @FXML
+    private Label labelPocetHKaret;
+
+    @FXML
+    private Label labelPocetZKaret;
+
+    @FXML
+    private Label labelPocetCKaret;
+    
+      @FXML
+    private Label labelPocetCKaret1;
+
+    @FXML
+    private Label labelPocetZKaret1;
+
+    @FXML
+    private Label labelPocetHKaret1;
+
+    @FXML
+    private Label labelPocetMKaret1;
+
+    @FXML
+    private Label labelPocetBKaret1;
+
 
     @FXML
     private ImageView h2Slechtic;
@@ -485,6 +526,9 @@ public class HraController implements Initializable {
 
     @FXML
     private Text textPocetBil2;
+    
+    @FXML
+    private ImageView obrazekYoda;
 
     GeneratorKaret g = new GeneratorKaret();
     GeneratorSlechticu f = new GeneratorSlechticu();
@@ -545,6 +589,49 @@ public class HraController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource(nazev + ".fxml"));
         AnchorPaneHra.getChildren().setAll(pane);
     }
+    
+    public void puvodniAnimaceYoda(Node node){
+        rotaceYoda(node);
+         TranslateTransition translate = new TranslateTransition();
+         translate.setNode(node);
+         translate.setDuration(Duration.millis(1000));
+         translate.setByX(-500);
+         translate.play();
+
+         
+    }
+    
+    public void rotaceYoda(Node node){
+        RotateTransition rotate = new RotateTransition();
+        rotate.setNode(node);
+        rotate.setDuration(Duration.millis(1000));
+        rotate.setCycleCount(1);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.setByAngle(360);
+        rotate.setAxis(Rotate.Z_AXIS);
+        rotate.play();
+    }
+    
+    public void od1K2AnimaceYoda(Node node){
+        rotaceYoda(node);
+        TranslateTransition translate = new TranslateTransition();
+         translate.setNode(node);
+         translate.setDuration(Duration.millis(1000));
+         translate.setByX(-1000);
+         translate.play();
+
+    }
+    
+    public void od2K1AnimaceYoda(Node node){
+        rotaceYoda(node);
+        TranslateTransition translate = new TranslateTransition();
+         translate.setNode(node);
+         translate.setDuration(Duration.millis(1000));
+         translate.setByX(1000);
+         translate.play();
+
+    }
+    
 
     public void nactiPuvodniKarty() {
 
@@ -771,6 +858,20 @@ public class HraController implements Initializable {
         rotate.play(); 
         
     }
+    
+    void aktualizacePoctuKaret(){
+        labelPocetBKaret.setText("Bílá: " + hrac1.pocetBilKaret);
+        labelPocetHKaret.setText("Hnědá: " + hrac1.pocetHneKaret);
+        labelPocetCKaret.setText("Červená: " + hrac1.pocetCerKaret);
+        labelPocetMKaret.setText("Modrá: " + hrac1.pocetModKaret);
+        labelPocetZKaret.setText("Zelená: " + hrac1.pocetZelKaret);
+        
+        labelPocetBKaret1.setText("Bílá: " + hrac2.pocetBilKaret);
+        labelPocetHKaret1.setText("Hnědá: " + hrac2.pocetHneKaret);
+        labelPocetCKaret1.setText("Červená: " + hrac2.pocetCerKaret);
+        labelPocetMKaret1.setText("Modrá: " + hrac2.pocetModKaret);
+        labelPocetZKaret1.setText("Zelená: " + hrac2.pocetZelKaret);
+    }
 
     void animaceDotekuKarty(Node node) {
         node.toFront();
@@ -794,16 +895,30 @@ public class HraController implements Initializable {
         scale.setToX(1);
         scale.setToY(1);
         scale.play();
-
     }
+    
+        void animaceZmenseni(Node node) {
+        node.toBack();
+        
+        ScaleTransition scale = new ScaleTransition();
+        scale.setNode(node);
+        scale.setDuration(Duration.millis(100));
+        scale.setToX(0.5);
+        scale.setToY(0.5);
+        scale.play();
+    }
+        
+        
+        
+        
 
     void aktualizaceBodu() {
         System.out.println("zacatek aktualizace bodu");
         String x = Integer.toString(hrac1.pocetBodu);
         String y = Integer.toString(hrac2.pocetBodu);
 
-        textBodyH1.setText(x + " b.");
-        textBodyH2.setText(y + " b.");
+        textBodyH1.setText("Počet bodů: "+ x);
+        textBodyH2.setText("Počet bodů: "+ y);
         System.out.println("pred ifem");
         if (hrac1.pocetBodu >= 15 && tah % 2 == 1) {
             System.out.println("vyhral jsi 1");
@@ -1378,7 +1493,8 @@ public class HraController implements Initializable {
 
         return false;
     }
-
+int poc = 0;
+    
     void hrac1JeNaTahu() {
         tah++;
         aktualizaceBodu();
@@ -1386,15 +1502,24 @@ public class HraController implements Initializable {
         vypnoutZari();
         hrac1.jeNaTahu = true;
         hrac2.jeNaTahu = false;
-
+        
         textPoleHrac1.setStyle("-fx-background-color: #009933");//zelena
-        textPoleHrac2.setStyle("-fx-background-color: #ff0000");
+        textPoleHrac2.setStyle("-fx-background-color: #a6a6a6");
 
-        zvyrazneni(textPoleHrac2);
+        //zvyrazneni(textPoleHrac2);
+        animaceZmenseni(textPoleHrac2);
+        vypnoutZvyrazneni(textPoleHrac2);
         zvyrazniZelene(textPoleHrac1);
         
         animaceDotekuKarty(textPoleHrac1);
         animaceZmenaTahu(textPoleHrac1);
+        
+        if(poc == 0){
+            puvodniAnimaceYoda(obrazekYoda);
+            poc++;
+        }else{
+            od1K2AnimaceYoda(obrazekYoda);
+        }
         
 
         /*
@@ -1420,10 +1545,12 @@ public class HraController implements Initializable {
         hrac1.jeNaTahu = false;
         hrac2.jeNaTahu = true;
 
-        textPoleHrac1.setStyle("-fx-background-color: #ff0000");
+        textPoleHrac1.setStyle("-fx-background-color: #a6a6a6");
         textPoleHrac2.setStyle("-fx-background-color: #009933");//zelena
-
-        zvyrazneni(textPoleHrac1);
+        od2K1AnimaceYoda(obrazekYoda);
+        //zvyrazneni(textPoleHrac1);
+        animaceZmenseni(textPoleHrac1);
+        vypnoutZvyrazneni(textPoleHrac1);
         zvyrazniZelene(textPoleHrac2);
         
         animaceDotekuKarty(textPoleHrac2);
@@ -1513,7 +1640,7 @@ public class HraController implements Initializable {
             if (nakupKarty(karta)) {
                 prehratZvukKarty();
                 nactiKartu(cisloKarty);
-
+                aktualizacePoctuKaret();
                 vypnoutZari();
                 zkontrolujDostupnost();
 
@@ -1534,7 +1661,7 @@ public class HraController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        obrazekYoda.setImage(new Image("Pics/Obrazky/BabyYodaTransparent.png"));
         UkladacNicku ukl = new UkladacNicku();
 
         try {
@@ -1551,13 +1678,13 @@ public class HraController implements Initializable {
         if (nick.nickHrac1.length() > 0) {
             hrac1 = new Hrac(nick.nickHrac1, true);
         } else {
-            hrac1 = new Hrac("Hrac1", true);
+            hrac1 = new Hrac("Hráč 1", true);
         }
 
         if (nick.nickHrac2.length() > 0) {
             hrac2 = new Hrac(nick.nickHrac2, false);
         } else {
-            hrac2 = new Hrac("Hrac2", false);
+            hrac2 = new Hrac("Hráč 2", false);
         }
 
         textPoleHrac1.setText(hrac1.id);
@@ -1565,14 +1692,15 @@ public class HraController implements Initializable {
 
         ukladac = new UkladacVysledku();
         bankCentralni = new BankKamenu(4, 4, 4, 4, 4, 4);
-
+        
         g.generuj();
         f.generujSlechtice();
         kresli();
-
+        
         //System.out.println(ukladac.připravSoubor());
         hrac1JeNaTahu();
         tah = 1;
+        aktualizacePoctuKaret();
 
     }
 

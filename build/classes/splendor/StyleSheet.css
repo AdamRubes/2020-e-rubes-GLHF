@@ -40,6 +40,7 @@ and open the template in the editor.
 .label {
     -fx-font-family: Gabriola; 
     -fx-text-fill: #29a1dd; 
+    
 }
 
 #labelVitez {
@@ -70,4 +71,20 @@ and open the template in the editor.
     
     -fx-font-family: Gabriola; 
     -fx-text-fill: #ffffff;
+}
+
+#anchorPaneBank{
+    
+    
+}
+
+#anchorPaneKarty{
+    
+    
+}
+
+#labelPocetBKaret {
+    -fx-font-family: Gabriola; 
+    -fx-font-weight: bold;
+    
 }
