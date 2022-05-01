@@ -1661,7 +1661,7 @@ int poc = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        obrazekYoda.setImage(new Image("Pics/Obrazky/BabyYodaTransparent.png"));
+        obrazekYoda.setImage(new Image("Pics/Obrazky/BabyYodaTransparent.png")); // vlastní tvorba
         UkladacNicku ukl = new UkladacNicku();
 
         try {
