@@ -360,7 +360,7 @@
                         <Image url="@../Pics/Karty/zel3-1.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="obrazekYoda" fitHeight="157.0" fitWidth="235.0" layoutX="212.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="obrazekYoda" fitHeight="132.0" fitWidth="235.0" layoutX="212.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </children>
